@@ -2505,8 +2505,13 @@ extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
 # 27 "main.c" 2
+# 37 "main.c"
+void setup(void) {
+    ANSEL = 0;
+    ANSELH = 0;
+    TRISBbits.TRISB0 = 0;
 
-
+}
 
 
 
@@ -2514,5 +2519,5 @@ extern __bank0 __bit __timeout;
 
 
 void main(void) {
-    return;
+
 }
