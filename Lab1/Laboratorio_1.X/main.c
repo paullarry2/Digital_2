@@ -28,7 +28,16 @@
 //******************************************************************************
 //Variables
 //******************************************************************************
- int _XTAL_FREQ = 800000
+#define _XTAL_FREQ  8000000
+#define Led_roja PORTEbits.RE0
+#define Led_amarilla PORTEbits.RE1
+#define Led_verde PORTEbits.RE2
+#define Strt PORTBbits.RB0
+#define Jugador_1 PORTBbits.RB1
+#define Jugador_2 PORTBbits.RB2
+#define Ganador_1 PORTAbits.RA1
+#define Ganador_2 PORTAbits.RA2
+
 
 //******************************************************************************
 //Funciones
@@ -49,6 +58,26 @@ void setup(void) {
 void main(void) {
     setup();
     
-    while()
+    while(1){
+        if (Strt == 1)
+            semaforo();
+    }
 }
 
+
+//******************************************************************************
+//Funciones
+//******************************************************************************
+
+void semaforo(void) {
+    Led_roja = 1;
+    _delay_ms(500);
+    Led_roja = 0;
+    Led_amarilla = 1;
+    _delay_ms(500);
+    Led_amarilla = 0;
+    Led_verde = 1;
+    _delay_ms(200);
+    Led_verde = 0;
+   }
+            

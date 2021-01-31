@@ -2505,7 +2505,7 @@ extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
 # 27 "main.c" 2
-# 37 "main.c"
+# 46 "main.c"
 void setup(void) {
     ANSEL = 0;
     ANSELH = 0;
@@ -2519,5 +2519,27 @@ void setup(void) {
 
 
 void main(void) {
+    setup();
 
+    while(1){
+        if (PORTBbits.RB0 == 1)
+            semaforo();
+    }
 }
+
+
+
+
+
+
+void semaforo(void) {
+    PORTEbits.RE0 = 1;
+    _delay_ms(500);
+    PORTEbits.RE0 = 0;
+    PORTEbits.RE1 = 1;
+    _delay_ms(500);
+    PORTEbits.RE1 = 0;
+    PORTEbits.RE2 = 1;
+    _delay_ms(200);
+    PORTEbits.RE2 = 0;
+   }
