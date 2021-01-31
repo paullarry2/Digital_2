@@ -42,13 +42,9 @@
 //******************************************************************************
 //Funciones
 //******************************************************************************
+void semaforo(void);
+void setup(void);
 
-void setup(void) {
-    ANSEL = 0;
-    ANSELH = 0;
-    TRISBbits.TRISB0 = 0;
-
-}
 
 
 //******************************************************************************
@@ -71,13 +67,20 @@ void main(void) {
 
 void semaforo(void) {
     Led_roja = 1;
-    _delay_ms(500);
+    __delay_ms(500);
     Led_roja = 0;
     Led_amarilla = 1;
-    _delay_ms(500);
+    __delay_ms(500);
     Led_amarilla = 0;
     Led_verde = 1;
-    _delay_ms(200);
+    __delay_ms(200);
     Led_verde = 0;
    }
+
+void setup(void) {
+    ANSEL = 0;
+    ANSELH = 0;
+    TRISBbits.TRISB0 = 0;
+
+}
             

@@ -11,9 +11,33 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"49 C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+"54 C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
 [v _main main `(v  1 e 1 0 ]
-[s S24 . 1 `uc 1 TRISB0 1 0 :1:0 
+"68
+[v _semaforo semaforo `(v  1 e 1 0 ]
+"80
+[v _setup setup `(v  1 e 1 0 ]
+[s S26 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"245 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[u S35 . 1 `S26 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES35  1 e 1 @6 ]
+[s S51 . 1 `uc 1 RE0 1 0 :1:0 
+`uc 1 RE1 1 0 :1:1 
+`uc 1 RE2 1 0 :1:2 
+`uc 1 RE3 1 0 :1:3 
+]
+"427
+[u S56 . 1 `S51 1 . 1 0 ]
+[v _PORTEbits PORTEbits `VES56  1 e 1 @9 ]
+[s S72 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
 `uc 1 TRISB3 1 0 :1:3 
@@ -22,15 +46,25 @@
 `uc 1 TRISB6 1 0 :1:6 
 `uc 1 TRISB7 1 0 :1:7 
 ]
-"1495 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
-[u S33 . 1 `S24 1 . 1 0 ]
-[v _TRISBbits TRISBbits `VES33  1 e 1 @134 ]
+"1495
+[u S81 . 1 `S72 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES81  1 e 1 @134 ]
 "3387
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3449
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
-"49 C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+"54 C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"51
+"61
+} 0
+"80
+[v _setup setup `(v  1 e 1 0 ]
+{
+"85
+} 0
+"68
+[v _semaforo semaforo `(v  1 e 1 0 ]
+{
+"78
 } 0
