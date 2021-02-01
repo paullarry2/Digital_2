@@ -1,10 +1,10 @@
 __S0 800 0 ABS 0
-__S1 73 0 ABS 0
+__S1 78 0 ABS 0
 __S2 0 0 ABS 0
 __S3 0 0 ABS 0
 __Hintentry 0 0 CODE 0
 __Lintentry 0 0 CODE 0
-_main 78F 0 CODE 0
+_main 729 0 CODE 0
 ___sp 0 0 STACK 2
 btemp 7E 0 ABS 0
 start 0 0 CODE 0
@@ -25,7 +25,7 @@ __Hconfig 2009 0 CONFIG 4
 __Lconfig 0 0 CONFIG 4
 __Hram 0 0 ABS 0
 __Lram 0 0 ABS 0
-_setup 7A3 0 CODE 0
+_setup 6DF 0 CODE 0
 __Hfunctab 0 0 ENTRY 0
 __Lfunctab 0 0 ENTRY 0
 __Hcommon 0 0 ABS 0
@@ -33,7 +33,7 @@ __Lcommon 0 0 ABS 0
 __Heeprom_data 0 0 EEDATA 3
 __Leeprom_data 0 0 EEDATA 3
 ___int_sp 0 0 STACK 2
-_semaforo 7C7 0 CODE 0
+_semaforo 703 0 CODE 0
 _ANSELH 189 0 ABS 0
 __Habs1 0 0 ABS 0
 __Labs1 0 0 ABS 0
@@ -50,12 +50,15 @@ __Hcode 0 0 ABS 0
 __Lcode 0 0 ABS 0
 __Hinit 0 0 CODE 0
 __Linit 0 0 CODE 0
-__end_of_main 7A3 0 CODE 0
+__end_of_main 7FA 0 CODE 0
 __Htext 0 0 ABS 0
 __Ltext 0 0 ABS 0
 end_of_initialization 7FC 0 CODE 0
 ___stacklo 0 0 ABS 0
+_PORTAbits 5 0 ABS 0
 _PORTBbits 6 0 ABS 0
+_PORTCbits 7 0 ABS 0
+_PORTDbits 8 0 ABS 0
 __Hstrings 0 0 ABS 0
 __Lstrings 0 0 ABS 0
 _PORTEbits 9 0 ABS 0
@@ -70,8 +73,8 @@ __Lbank3 0 0 ABS 0
 ___latbits 2 0 ABS 0
 __Hpowerup 0 0 CODE 0
 __Lpowerup 0 0 CODE 0
-__ptext1 7A3 0 CODE 0
-__ptext2 7C7 0 CODE 0
+__ptext1 6DF 0 CODE 0
+__ptext2 703 0 CODE 0
 __Hclrtext 0 0 ABS 0
 __Lclrtext 0 0 ABS 0
 __size_of_semaforo 0 0 ABS 0
@@ -80,22 +83,25 @@ __Hstack 0 0 STACK 2
 __Lstack 0 0 STACK 2
 __Hspace_0 800 0 ABS 0
 __Lspace_0 0 0 ABS 0
-__Hspace_1 73 0 ABS 0
+__Hspace_1 78 0 ABS 0
 __Lspace_1 0 0 ABS 0
 __size_of_setup 0 0 ABS 0
 __Hspace_2 0 0 ABS 0
 __Lspace_2 0 0 ABS 0
 __Hcinit 800 0 CODE 0
-__Lcinit 7FC 0 CODE 0
+__Lcinit 7FA 0 CODE 0
 __Hspace_3 0 0 ABS 0
 __Lspace_3 0 0 ABS 0
 __size_of_main 0 0 ABS 0
 __Hspace_4 4010 0 ABS 0
 __Lspace_4 0 0 ABS 0
-__end_of_semaforo 7FC 0 CODE 0
+__end_of_semaforo 729 0 CODE 0
+__HbssCOMMON 0 0 ABS 0
+__LbssCOMMON 0 0 ABS 0
+__pbssCOMMON 76 0 COMMON 1
 __Hend_init 3 0 CODE 0
 __Lend_init 0 0 CODE 0
-__end_of_setup 7C7 0 CODE 0
+__end_of_setup 703 0 CODE 0
 __Hreset_vec 0 0 CODE 0
 __Lreset_vec 0 0 CODE 0
 intlevel0 0 0 ENTRY 0
@@ -107,53 +113,72 @@ intlevel5 0 0 ENTRY 0
 __HcstackCOMMON 0 0 ABS 0
 __LcstackCOMMON 0 0 ABS 0
 __pcstackCOMMON 70 0 COMMON 1
-start_initialization 7FC 0 CODE 0
+start_initialization 7FA 0 CODE 0
 __Hmaintext 0 0 ABS 0
 __Lmaintext 0 0 ABS 0
-__pmaintext 78F 0 CODE 0
-__initialization 7FC 0 CODE 0
+__pmaintext 729 0 CODE 0
+__initialization 7FA 0 CODE 0
 %segments
 reset_vec 0 5 CODE 0 0
-cinit FF8 FFF CODE FF8 0
-cstackCOMMON 70 72 COMMON 70 1
-text2 F8E FF7 CODE F8E 0
-text1 F46 F8D CODE F46 0
-maintext F1E F45 CODE F1E 0
+cinit FF4 FFF CODE FF4 0
+cstackCOMMON 70 77 COMMON 70 1
+maintext E52 FF3 CODE E52 0
+text2 E06 E51 CODE E06 0
+text1 DBE E05 CODE DBE 0
 %locals
 dist/default/production\Laboratorio_1.X.production.o
-C:\Users\Universidad\AppData\Local\Temp\sdo4.s
-453 7FC 0 CODE 0
-456 7FC 0 CODE 0
-462 7FC 0 CODE 0
-464 7FC 0 CODE 0
-465 7FD 0 CODE 0
+C:\Users\Universidad\AppData\Local\Temp\s9ig.s
+459 7FA 0 CODE 0
+462 7FA 0 CODE 0
+473 7FA 0 CODE 0
+474 7FB 0 CODE 0
+480 7FC 0 CODE 0
+482 7FC 0 CODE 0
+483 7FD 0 CODE 0
 main.c
-56 78F 0 CODE 0
-57 78F 0 CODE 0
-60 794 0 CODE 0
-61 79A 0 CODE 0
-82 7A3 0 CODE 0
-83 7A3 0 CODE 0
-84 7A6 0 CODE 0
-85 7A7 0 CODE 0
-86 7AA 0 CODE 0
-87 7AD 0 CODE 0
-88 7B1 0 CODE 0
-89 7B4 0 CODE 0
-90 7B7 0 CODE 0
-91 7BA 0 CODE 0
-92 7BD 0 CODE 0
-93 7C0 0 CODE 0
-94 7C3 0 CODE 0
-95 7C6 0 CODE 0
-70 7C7 0 CODE 0
-71 7C7 0 CODE 0
-72 7CA 0 CODE 0
-73 7D7 0 CODE 0
-74 7DA 0 CODE 0
-75 7DB 0 CODE 0
-76 7E8 0 CODE 0
-77 7EB 0 CODE 0
-78 7EC 0 CODE 0
-79 7F8 0 CODE 0
-80 7FB 0 CODE 0
+57 729 0 CODE 0
+58 729 0 CODE 0
+61 72E 0 CODE 0
+62 734 0 CODE 0
+63 739 0 CODE 0
+64 754 0 CODE 0
+65 768 0 CODE 0
+66 774 0 CODE 0
+67 778 0 CODE 0
+68 78D 0 CODE 0
+69 799 0 CODE 0
+71 79F 0 CODE 0
+72 7B3 0 CODE 0
+73 7BF 0 CODE 0
+74 7C3 0 CODE 0
+75 7D8 0 CODE 0
+76 7E4 0 CODE 0
+78 7EA 0 CODE 0
+79 7EE 0 CODE 0
+80 7EF 0 CODE 0
+81 7F0 0 CODE 0
+82 7F4 0 CODE 0
+84 7F6 0 CODE 0
+105 6DF 0 CODE 0
+106 6DF 0 CODE 0
+107 6E2 0 CODE 0
+108 6E3 0 CODE 0
+109 6E6 0 CODE 0
+110 6E9 0 CODE 0
+111 6ED 0 CODE 0
+112 6F0 0 CODE 0
+113 6F3 0 CODE 0
+114 6F6 0 CODE 0
+115 6F9 0 CODE 0
+116 6FC 0 CODE 0
+117 6FF 0 CODE 0
+118 702 0 CODE 0
+95 703 0 CODE 0
+96 703 0 CODE 0
+97 706 0 CODE 0
+98 713 0 CODE 0
+99 716 0 CODE 0
+100 717 0 CODE 0
+101 724 0 CODE 0
+102 727 0 CODE 0
+103 728 0 CODE 0

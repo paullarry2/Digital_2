@@ -11,14 +11,26 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"56 C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+"57 C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"70
+"95
 [v _semaforo semaforo `(v  1 e 1 0 ]
-"82
+"105
 [v _setup setup `(v  1 e 1 0 ]
 "166 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
+[s S51 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+`uc 1 RA7 1 0 :1:7 
+]
+"183
+[u S60 . 1 `S51 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES60  1 e 1 @5 ]
 "228
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
 [s S26 . 1 `uc 1 RB0 1 0 :1:0 
@@ -35,18 +47,42 @@
 [v _PORTBbits PORTBbits `VES35  1 e 1 @6 ]
 "290
 [v _PORTC PORTC `VEuc  1 e 1 @7 ]
+[s S93 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+"307
+[u S102 . 1 `S93 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES102  1 e 1 @7 ]
 "352
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
+[s S114 . 1 `uc 1 RD0 1 0 :1:0 
+`uc 1 RD1 1 0 :1:1 
+`uc 1 RD2 1 0 :1:2 
+`uc 1 RD3 1 0 :1:3 
+`uc 1 RD4 1 0 :1:4 
+`uc 1 RD5 1 0 :1:5 
+`uc 1 RD6 1 0 :1:6 
+`uc 1 RD7 1 0 :1:7 
+]
+"369
+[u S123 . 1 `S114 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES123  1 e 1 @8 ]
 "414
 [v _PORTE PORTE `VEuc  1 e 1 @9 ]
-[s S51 . 1 `uc 1 RE0 1 0 :1:0 
+[s S72 . 1 `uc 1 RE0 1 0 :1:0 
 `uc 1 RE1 1 0 :1:1 
 `uc 1 RE2 1 0 :1:2 
 `uc 1 RE3 1 0 :1:3 
 ]
 "427
-[u S56 . 1 `S51 1 . 1 0 ]
-[v _PORTEbits PORTEbits `VES56  1 e 1 @9 ]
+[u S77 . 1 `S72 1 . 1 0 ]
+[v _PORTEbits PORTEbits `VES77  1 e 1 @9 ]
 "1416
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
 "1478
@@ -61,18 +97,18 @@
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3449
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
-"56 C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+"57 C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"63
+"88
 } 0
-"82
+"105
 [v _setup setup `(v  1 e 1 0 ]
 {
-"95
+"118
 } 0
-"70
+"95
 [v _semaforo semaforo `(v  1 e 1 0 ]
 {
-"80
+"103
 } 0

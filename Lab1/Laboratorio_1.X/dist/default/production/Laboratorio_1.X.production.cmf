@@ -11,15 +11,16 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\Universidad\AppData\Local\Temp\sdo4.o
+$C:\Users\Universidad\AppData\Local\Temp\s9ig.o
 end_init CODE 0 0 0 3 2
 config CONFIG 4 2007 2007 2 2
 $dist/default/production\Laboratorio_1.X.production.o
-cinit CODE 0 7FC 7FC 4 2
-text1 CODE 0 7A3 7A3 24 2
-text2 CODE 0 7C7 7C7 35 2
-maintext CODE 0 78F 78F 14 2
-cstackCOMMON COMMON 1 70 70 3 1
+cinit CODE 0 7FA 7FA 6 2
+text1 CODE 0 6DF 6DF 24 2
+text2 CODE 0 703 703 26 2
+maintext CODE 0 729 729 D1 2
+cstackCOMMON COMMON 1 70 70 6 1
+bssCOMMON COMMON 1 76 76 2 1
 config CONFIG 4 2007 2007 2 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -35,23 +36,23 @@ BANK0 20-6F 1
 BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
-CONST 3-78E 2
+CONST 3-6DE 2
 CONST 800-1FFF 2
-ENTRY 3-78E 2
+ENTRY 3-6DE 2
 ENTRY 800-1FFF 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
-CODE 3-78E 2
+CODE 3-6DE 2
 CODE 800-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
 SFR3 180-18F 1
-COMMON 73-7D 1
+COMMON 78-7D 1
 EEDATA 2100-21FF 2
-STRCODE 3-78E 2
+STRCODE 3-6DE 2
 STRCODE 800-1FFF 2
-STRING 3-78E 2
+STRING 3-6DE 2
 STRING 800-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -67,40 +68,59 @@ STRING 800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Laboratorio_1.X.production.o
-7FC cinit CODE >453:C:\Users\Universidad\AppData\Local\Temp\sdo4.s
-7FC cinit CODE >456:C:\Users\Universidad\AppData\Local\Temp\sdo4.s
-7FC cinit CODE >462:C:\Users\Universidad\AppData\Local\Temp\sdo4.s
-7FC cinit CODE >464:C:\Users\Universidad\AppData\Local\Temp\sdo4.s
-7FD cinit CODE >465:C:\Users\Universidad\AppData\Local\Temp\sdo4.s
-7C7 text2 CODE >70:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
-7C7 text2 CODE >71:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
-7CA text2 CODE >72:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
-7D7 text2 CODE >73:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
-7DA text2 CODE >74:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
-7DB text2 CODE >75:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
-7E8 text2 CODE >76:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
-7EB text2 CODE >77:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
-7EC text2 CODE >78:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
-7F8 text2 CODE >79:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
-7FB text2 CODE >80:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
-7A3 text1 CODE >82:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
-7A3 text1 CODE >83:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
-7A6 text1 CODE >84:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
-7A7 text1 CODE >85:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
-7AA text1 CODE >86:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
-7AD text1 CODE >87:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
-7B1 text1 CODE >88:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
-7B4 text1 CODE >89:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
-7B7 text1 CODE >90:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
-7BA text1 CODE >91:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
-7BD text1 CODE >92:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
-7C0 text1 CODE >93:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
-7C3 text1 CODE >94:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
-7C6 text1 CODE >95:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
-78F maintext CODE >56:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
-78F maintext CODE >57:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
-794 maintext CODE >60:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
-79A maintext CODE >61:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+7FA cinit CODE >459:C:\Users\Universidad\AppData\Local\Temp\s9ig.s
+7FA cinit CODE >462:C:\Users\Universidad\AppData\Local\Temp\s9ig.s
+7FA cinit CODE >473:C:\Users\Universidad\AppData\Local\Temp\s9ig.s
+7FB cinit CODE >474:C:\Users\Universidad\AppData\Local\Temp\s9ig.s
+7FC cinit CODE >480:C:\Users\Universidad\AppData\Local\Temp\s9ig.s
+7FC cinit CODE >482:C:\Users\Universidad\AppData\Local\Temp\s9ig.s
+7FD cinit CODE >483:C:\Users\Universidad\AppData\Local\Temp\s9ig.s
+703 text2 CODE >95:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+703 text2 CODE >96:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+706 text2 CODE >97:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+713 text2 CODE >98:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+716 text2 CODE >99:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+717 text2 CODE >100:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+724 text2 CODE >101:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+727 text2 CODE >102:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+728 text2 CODE >103:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+6DF text1 CODE >105:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+6DF text1 CODE >106:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+6E2 text1 CODE >107:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+6E3 text1 CODE >108:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+6E6 text1 CODE >109:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+6E9 text1 CODE >110:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+6ED text1 CODE >111:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+6F0 text1 CODE >112:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+6F3 text1 CODE >113:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+6F6 text1 CODE >114:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+6F9 text1 CODE >115:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+6FC text1 CODE >116:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+6FF text1 CODE >117:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+702 text1 CODE >118:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+729 maintext CODE >57:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+729 maintext CODE >58:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+72E maintext CODE >61:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+734 maintext CODE >62:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+739 maintext CODE >63:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+754 maintext CODE >64:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+768 maintext CODE >65:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+774 maintext CODE >66:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+778 maintext CODE >67:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+78D maintext CODE >68:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+799 maintext CODE >69:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+79F maintext CODE >71:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+7B3 maintext CODE >72:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+7BF maintext CODE >73:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+7C3 maintext CODE >74:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+7D8 maintext CODE >75:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+7E4 maintext CODE >76:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+7EA maintext CODE >78:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+7EE maintext CODE >79:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+7EF maintext CODE >80:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+7F0 maintext CODE >81:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+7F4 maintext CODE >82:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
+7F6 maintext CODE >84:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -115,34 +135,36 @@ $dist/default/production\Laboratorio_1.X.production.o
 %SYMTAB
 ___latbits 2 0 ABS 0 - dist/default/production\Laboratorio_1.X.production.o
 __Hspace_0 800 0 ABS 0 - -
-__Hspace_1 73 0 ABS 0 - -
+__Hspace_1 78 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 4010 0 ABS 0 - -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\Universidad\AppData\Local\Temp\sdo4.o
-_main F1E 0 CODE 0 maintext dist/default/production\Laboratorio_1.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\Universidad\AppData\Local\Temp\s9ig.o
+_main E52 0 CODE 0 maintext dist/default/production\Laboratorio_1.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Laboratorio_1.X.production.o
-start 0 0 CODE 0 init C:\Users\Universidad\AppData\Local\Temp\sdo4.o
+start 0 0 CODE 0 init C:\Users\Universidad\AppData\Local\Temp\s9ig.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Laboratorio_1.X.production.o
+__HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\Universidad\AppData\Local\Temp\sdo4.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\Universidad\AppData\Local\Temp\sdo4.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\Universidad\AppData\Local\Temp\sdo4.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\Universidad\AppData\Local\Temp\sdo4.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\Universidad\AppData\Local\Temp\sdo4.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\Universidad\AppData\Local\Temp\sdo4.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\Universidad\AppData\Local\Temp\s9ig.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\Universidad\AppData\Local\Temp\s9ig.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\Universidad\AppData\Local\Temp\s9ig.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\Universidad\AppData\Local\Temp\s9ig.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\Universidad\AppData\Local\Temp\s9ig.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\Universidad\AppData\Local\Temp\s9ig.o
+__LbssCOMMON 0 0 ABS 0 bssCOMMON -
 wtemp0 7E 0 ABS 0 - dist/default/production\Laboratorio_1.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
 _ANSELH 189 0 ABS 0 - dist/default/production\Laboratorio_1.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\Universidad\AppData\Local\Temp\sdo4.o
-___stacklo 0 0 ABS 0 - C:\Users\Universidad\AppData\Local\Temp\sdo4.o
+___stackhi 0 0 ABS 0 - C:\Users\Universidad\AppData\Local\Temp\s9ig.o
+___stacklo 0 0 ABS 0 - C:\Users\Universidad\AppData\Local\Temp\s9ig.o
 __size_of_setup 0 0 ABS 0 - dist/default/production\Laboratorio_1.X.production.o
-start_initialization FF8 0 CODE 0 cinit dist/default/production\Laboratorio_1.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\Universidad\AppData\Local\Temp\sdo4.o
+start_initialization FF4 0 CODE 0 cinit dist/default/production\Laboratorio_1.X.production.o
+___int_sp 0 0 STACK 2 stack C:\Users\Universidad\AppData\Local\Temp\s9ig.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -156,9 +178,12 @@ __Lbank0 0 0 ABS 0 bank0 -
 __Lbank1 0 0 ABS 0 bank1 -
 __Lbank2 0 0 ABS 0 bank2 -
 __Lbank3 0 0 ABS 0 bank3 -
-__Lcinit FF8 0 CODE 0 cinit -
+__Lcinit FF4 0 CODE 0 cinit -
 __Lstack 0 0 STACK 2 stack -
+_PORTAbits 5 0 ABS 0 - dist/default/production\Laboratorio_1.X.production.o
 _PORTBbits 6 0 ABS 0 - dist/default/production\Laboratorio_1.X.production.o
+_PORTCbits 7 0 ABS 0 - dist/default/production\Laboratorio_1.X.production.o
+_PORTDbits 8 0 ABS 0 - dist/default/production\Laboratorio_1.X.production.o
 _PORTEbits 9 0 ABS 0 - dist/default/production\Laboratorio_1.X.production.o
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
@@ -178,30 +203,31 @@ __Lsfr3 0 0 ABS 0 sfr3 -
 __Ltext 0 0 ABS 0 text -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __S0 800 0 ABS 0 - -
-__S1 73 0 ABS 0 - -
+__S1 78 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 __Lintentry 0 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Universidad\AppData\Local\Temp\sdo4.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Universidad\AppData\Local\Temp\s9ig.o
 __size_of_semaforo 0 0 ABS 0 - dist/default/production\Laboratorio_1.X.production.o
-__pmaintext F1E 0 CODE 0 maintext dist/default/production\Laboratorio_1.X.production.o
+__pmaintext E52 0 CODE 0 maintext dist/default/production\Laboratorio_1.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
-_semaforo F8E 0 CODE 0 text2 dist/default/production\Laboratorio_1.X.production.o
+_semaforo E06 0 CODE 0 text2 dist/default/production\Laboratorio_1.X.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __Lspace_4 0 0 ABS 0 - -
+__pbssCOMMON 76 0 COMMON 1 bssCOMMON dist/default/production\Laboratorio_1.X.production.o
 __Lend_init 0 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-__end_of_semaforo FF8 0 CODE 0 text2 dist/default/production\Laboratorio_1.X.production.o
+__end_of_semaforo E52 0 CODE 0 text2 dist/default/production\Laboratorio_1.X.production.o
 end_of_initialization FF8 0 CODE 0 cinit dist/default/production\Laboratorio_1.X.production.o
 __Hintentry 0 0 CODE 0 intentry -
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 0 0 CODE 0 reset_vec -
-__ptext1 F46 0 CODE 0 text1 dist/default/production\Laboratorio_1.X.production.o
-__ptext2 F8E 0 CODE 0 text2 dist/default/production\Laboratorio_1.X.production.o
+__ptext1 DBE 0 CODE 0 text1 dist/default/production\Laboratorio_1.X.production.o
+__ptext2 E06 0 CODE 0 text2 dist/default/production\Laboratorio_1.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __Lreset_vec 0 0 CODE 0 reset_vec -
@@ -210,7 +236,7 @@ __Lfunctab 0 0 ENTRY 0 functab -
 __Lclrtext 0 0 ABS 0 clrtext -
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\Laboratorio_1.X.production.o
 __Hend_init 6 0 CODE 0 end_init -
-__end_of_main F46 0 CODE 0 maintext dist/default/production\Laboratorio_1.X.production.o
+__end_of_main FF4 0 CODE 0 maintext dist/default/production\Laboratorio_1.X.production.o
 _ANSEL 188 0 ABS 0 - dist/default/production\Laboratorio_1.X.production.o
 _PORTA 5 0 ABS 0 - dist/default/production\Laboratorio_1.X.production.o
 _PORTB 6 0 ABS 0 - dist/default/production\Laboratorio_1.X.production.o
@@ -222,11 +248,11 @@ _TRISB 86 0 ABS 0 - dist/default/production\Laboratorio_1.X.production.o
 _TRISC 87 0 ABS 0 - dist/default/production\Laboratorio_1.X.production.o
 _TRISD 88 0 ABS 0 - dist/default/production\Laboratorio_1.X.production.o
 _TRISE 89 0 ABS 0 - dist/default/production\Laboratorio_1.X.production.o
-__end_of_setup F8E 0 CODE 0 text1 dist/default/production\Laboratorio_1.X.production.o
+__end_of_setup E06 0 CODE 0 text1 dist/default/production\Laboratorio_1.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
-_setup F46 0 CODE 0 text1 dist/default/production\Laboratorio_1.X.production.o
-__initialization FF8 0 CODE 0 cinit dist/default/production\Laboratorio_1.X.production.o
+_setup DBE 0 CODE 0 text1 dist/default/production\Laboratorio_1.X.production.o
+__initialization FF4 0 CODE 0 cinit dist/default/production\Laboratorio_1.X.production.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -252,11 +278,11 @@ __initialization FF8 0 CODE 0 cinit dist/default/production\Laboratorio_1.X.prod
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-cinit 0 7FC FF8 4 2
-text1 0 7A3 F46 24 2
-text2 0 7C7 F8E 35 2
-maintext 0 78F F1E 14 2
-cstackCOMMON 1 70 70 3 1
+cinit 0 7FA FF4 6 2
+text1 0 6DF DBE 24 2
+text2 0 703 E06 26 2
+maintext 0 729 E52 D1 2
+cstackCOMMON 1 70 70 8 1
 reset_vec 0 0 0 3 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section

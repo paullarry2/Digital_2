@@ -9,7 +9,7 @@
 //Librerias
 //******************************************************************************
 // CONFIG1
-#pragma config FOSC = EXTRC_CLKOUT// Oscillator Selection bits (RC oscillator: CLKOUT function on RA6/OSC2/CLKOUT pin, RC on RA7/OSC1/CLKIN)
+#pragma config FOSC = XT// Oscillator Selection bits (RC oscillator: CLKOUT function on RA6/OSC2/CLKOUT pin, RC on RA7/OSC1/CLKIN)
 #pragma config WDTE = OFF       // Watchdog Timer Enable bit (WDT disabled and can be enabled by SWDTEN bit of the WDTCON register)
 #pragma config PWRTE = OFF      // Power-up Timer Enable bit (PWRT disabled)
 #pragma config MCLRE = ON       // RE3/MCLR pin function select bit (RE3/MCLR pin function is MCLR)
@@ -36,9 +36,10 @@
 #define Jugador_1 PORTBbits.RB1
 #define Jugador_2 PORTBbits.RB2
 #define Ganador_1 PORTAbits.RA1
-#define Ganador_2 PORTAbits.RA2
+#define Ganador_2 PORTAbits.RA0
 #define J1 PORTC
 #define J2 PORTD
+int z;
 
 
 //******************************************************************************
@@ -55,10 +56,34 @@ void setup(void);
 
 void main(void) {
     setup();
-    
-    while(1){
+
+    while (1) {
         if (Strt == 1)
             semaforo();
+        if ((Ganador_1 | Ganador_2) == 0 & Led_verde == 1) {
+            if (J1 == 0 & Jugador_1 == 1) {
+                __delay_ms(400);
+                J1 = 0b0000001;
+            } else if (Jugador_1 == 1 & J1 != 0) {
+                __delay_ms(400);
+                J1 = J1 << 1;
+            }
+            if (J2 == 0 & Jugador_2 == 1) {
+                __delay_ms(400);
+                J2 = 0b0000001;
+            } else if (Jugador_2 == 1 & J2 != 0) {
+                __delay_ms(400);
+                J2 = J2 << 1;
+            }
+            if (PORTCbits.RC7==1){
+                Ganador_1=1;
+            }
+            else if (PORTDbits.RD7==1){
+                Ganador_2=1;
+            }
+        }
+        
+
     }
 }
 
@@ -75,9 +100,7 @@ void semaforo(void) {
     __delay_ms(500);
     Led_amarilla = 0;
     Led_verde = 1;
-    __delay_ms(200);
-    Led_verde = 0;
-   }
+}
 
 void setup(void) {
     ANSEL = 0;
@@ -93,4 +116,4 @@ void setup(void) {
     TRISE = 0;
     PORTE = 0;
 }
-            
+
