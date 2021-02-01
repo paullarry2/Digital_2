@@ -28,7 +28,7 @@
 //******************************************************************************
 //Variables
 //******************************************************************************
-#define _XTAL_FREQ  8000000
+#define _XTAL_FREQ  8000000 // Para el oscilador de 8MHz del delay
 #define Led_roja PORTEbits.RE0
 #define Led_amarilla PORTEbits.RE1
 #define Led_verde PORTEbits.RE2
@@ -38,7 +38,7 @@
 #define Ganador_1 PORTAbits.RA1
 #define Ganador_2 PORTAbits.RA0
 #define J1 PORTC
-#define J2 PORTD
+#define J2 PORTD // defini mis puertos como variables.
 int z;
 
 
@@ -46,7 +46,7 @@ int z;
 //Funciones
 //******************************************************************************
 void semaforo(void);
-void setup(void);
+void setup(void); // pototipos para declarar las funcions
 
 
 
@@ -59,26 +59,26 @@ void main(void) {
 
     while (1) {
         if (Strt == 1)
-            semaforo();
-        if ((Ganador_1 | Ganador_2) == 0 & Led_verde == 1) {
-            if (J1 == 0 & Jugador_1 == 1) {
+            semaforo(); // main loop, solo funciona el programa si entro a mi primer if, de semaforo. 
+        if ((Ganador_1 | Ganador_2) == 0 & Led_verde == 1) { // solamente entra a este loop si no se ha ganado y ya se realizo la funcion semaforo.
+            if (J1 == 0 & Jugador_1 == 1) { // Para realizar el shifting se requiere de unn valor inicial. Aqui se "setea".
                 __delay_ms(400);
-                J1 = 0b0000001;
-            } else if (Jugador_1 == 1 & J1 != 0) {
+                J1 = 0b0000001; //Coloca el primer valor inicial para el jugador 1
+            } else if (Jugador_1 == 1 & J1 != 0) { //si ya se "seteo" el primer valor shifting J1.
                 __delay_ms(400);
                 J1 = J1 << 1;
             }
-            if (J2 == 0 & Jugador_2 == 1) {
+            if (J2 == 0 & Jugador_2 == 1) { //Lo mismo del valor inicial para el shifting, pero para el jugador 2.
                 __delay_ms(400);
                 J2 = 0b0000001;
-            } else if (Jugador_2 == 1 & J2 != 0) {
+            } else if (Jugador_2 == 1 & J2 != 0) { // Lo mismo del shifting para el jugador 2.
                 __delay_ms(400);
                 J2 = J2 << 1;
             }
-            if (PORTCbits.RC7==1){
+            if (PORTCbits.RC7==1){ // Si el jugador 1 alcanza la meta, se prende la lua que indicia el ganador
                 Ganador_1=1;
             }
-            else if (PORTDbits.RD7==1){
+            else if (PORTDbits.RD7==1){ // Lo mismo para el jugador 2
                 Ganador_2=1;
             }
         }
@@ -92,7 +92,7 @@ void main(void) {
 //Funciones
 //******************************************************************************
 
-void semaforo(void) {
+void semaforo(void) { // Secuencia de semaforo 
     Led_roja = 1;
     __delay_ms(500);
     Led_roja = 0;
@@ -102,7 +102,7 @@ void semaforo(void) {
     Led_verde = 1;
 }
 
-void setup(void) {
+void setup(void) { // Secuencia de puertos como entradas y valores iniiciles. 
     ANSEL = 0;
     ANSELH = 0;
     TRISA = 0;

@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\Universidad\AppData\Local\Temp\s9ig.o
+$C:\Users\Universidad\AppData\Local\Temp\smcs.o
 end_init CODE 0 0 0 3 2
 config CONFIG 4 2007 2007 2 2
 $dist/default/production\Laboratorio_1.X.production.o
@@ -68,13 +68,13 @@ STRING 800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Laboratorio_1.X.production.o
-7FA cinit CODE >459:C:\Users\Universidad\AppData\Local\Temp\s9ig.s
-7FA cinit CODE >462:C:\Users\Universidad\AppData\Local\Temp\s9ig.s
-7FA cinit CODE >473:C:\Users\Universidad\AppData\Local\Temp\s9ig.s
-7FB cinit CODE >474:C:\Users\Universidad\AppData\Local\Temp\s9ig.s
-7FC cinit CODE >480:C:\Users\Universidad\AppData\Local\Temp\s9ig.s
-7FC cinit CODE >482:C:\Users\Universidad\AppData\Local\Temp\s9ig.s
-7FD cinit CODE >483:C:\Users\Universidad\AppData\Local\Temp\s9ig.s
+7FA cinit CODE >459:C:\Users\Universidad\AppData\Local\Temp\smcs.s
+7FA cinit CODE >462:C:\Users\Universidad\AppData\Local\Temp\smcs.s
+7FA cinit CODE >473:C:\Users\Universidad\AppData\Local\Temp\smcs.s
+7FB cinit CODE >474:C:\Users\Universidad\AppData\Local\Temp\smcs.s
+7FC cinit CODE >480:C:\Users\Universidad\AppData\Local\Temp\smcs.s
+7FC cinit CODE >482:C:\Users\Universidad\AppData\Local\Temp\smcs.s
+7FD cinit CODE >483:C:\Users\Universidad\AppData\Local\Temp\smcs.s
 703 text2 CODE >95:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
 703 text2 CODE >96:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
 706 text2 CODE >97:C:\Users\Universidad\Documents\Digital2\Lab1\Laboratorio_1.X\main.c
@@ -141,30 +141,30 @@ __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 4010 0 ABS 0 - -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\Universidad\AppData\Local\Temp\s9ig.o
+___sp 0 0 STACK 2 stack C:\Users\Universidad\AppData\Local\Temp\smcs.o
 _main E52 0 CODE 0 maintext dist/default/production\Laboratorio_1.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Laboratorio_1.X.production.o
-start 0 0 CODE 0 init C:\Users\Universidad\AppData\Local\Temp\s9ig.o
+start 0 0 CODE 0 init C:\Users\Universidad\AppData\Local\Temp\smcs.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Laboratorio_1.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\Universidad\AppData\Local\Temp\s9ig.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\Universidad\AppData\Local\Temp\s9ig.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\Universidad\AppData\Local\Temp\s9ig.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\Universidad\AppData\Local\Temp\s9ig.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\Universidad\AppData\Local\Temp\s9ig.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\Universidad\AppData\Local\Temp\s9ig.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\Universidad\AppData\Local\Temp\smcs.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\Universidad\AppData\Local\Temp\smcs.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\Universidad\AppData\Local\Temp\smcs.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\Universidad\AppData\Local\Temp\smcs.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\Universidad\AppData\Local\Temp\smcs.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\Universidad\AppData\Local\Temp\smcs.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 wtemp0 7E 0 ABS 0 - dist/default/production\Laboratorio_1.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
 _ANSELH 189 0 ABS 0 - dist/default/production\Laboratorio_1.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\Universidad\AppData\Local\Temp\s9ig.o
-___stacklo 0 0 ABS 0 - C:\Users\Universidad\AppData\Local\Temp\s9ig.o
+___stackhi 0 0 ABS 0 - C:\Users\Universidad\AppData\Local\Temp\smcs.o
+___stacklo 0 0 ABS 0 - C:\Users\Universidad\AppData\Local\Temp\smcs.o
 __size_of_setup 0 0 ABS 0 - dist/default/production\Laboratorio_1.X.production.o
 start_initialization FF4 0 CODE 0 cinit dist/default/production\Laboratorio_1.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\Universidad\AppData\Local\Temp\s9ig.o
+___int_sp 0 0 STACK 2 stack C:\Users\Universidad\AppData\Local\Temp\smcs.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -207,7 +207,7 @@ __S1 78 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 __Lintentry 0 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Universidad\AppData\Local\Temp\s9ig.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Universidad\AppData\Local\Temp\smcs.o
 __size_of_semaforo 0 0 ABS 0 - dist/default/production\Laboratorio_1.X.production.o
 __pmaintext E52 0 CODE 0 maintext dist/default/production\Laboratorio_1.X.production.o
 __Lcommon 0 0 ABS 0 common -
