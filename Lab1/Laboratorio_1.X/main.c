@@ -37,6 +37,8 @@
 #define Jugador_2 PORTBbits.RB2
 #define Ganador_1 PORTAbits.RA1
 #define Ganador_2 PORTAbits.RA2
+#define J1 PORTC
+#define J2 PORTD
 
 
 //******************************************************************************
@@ -80,7 +82,15 @@ void semaforo(void) {
 void setup(void) {
     ANSEL = 0;
     ANSELH = 0;
-    TRISBbits.TRISB0 = 0;
-
+    TRISA = 0;
+    PORTA = 0;
+    TRISB = 0b00000111;
+    PORTB = 0;
+    TRISC = 0;
+    PORTC = 0;
+    TRISD = 0;
+    PORTD = 0;
+    TRISE = 0;
+    PORTE = 0;
 }
             

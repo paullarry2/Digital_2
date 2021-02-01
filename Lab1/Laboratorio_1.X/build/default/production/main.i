@@ -2505,7 +2505,7 @@ extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
 # 27 "main.c" 2
-# 45 "main.c"
+# 47 "main.c"
 void semaforo(void);
 void setup(void);
 
@@ -2544,6 +2544,14 @@ void semaforo(void) {
 void setup(void) {
     ANSEL = 0;
     ANSELH = 0;
-    TRISBbits.TRISB0 = 0;
-
+    TRISA = 0;
+    PORTA = 0;
+    TRISB = 0b00000111;
+    PORTB = 0;
+    TRISC = 0;
+    PORTC = 0;
+    TRISD = 0;
+    PORTD = 0;
+    TRISE = 0;
+    PORTE = 0;
 }
