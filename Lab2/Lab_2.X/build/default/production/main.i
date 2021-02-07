@@ -7,20 +7,20 @@
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-# 12 "main.c"
+# 13 "main.c"
 #pragma config FOSC = HS
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
-#pragma config MCLRE = ON
+#pragma config MCLRE = OFF
 #pragma config CP = OFF
 #pragma config CPD = OFF
-#pragma config BOREN = OFF
+#pragma config BOREN = ON
 #pragma config IESO = OFF
 #pragma config FCMEN = OFF
 #pragma config LVP = OFF
 
 
-#pragma config BOR4V = BOR40V
+
 #pragma config WRT = OFF
 
 
@@ -2504,7 +2504,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 27 "main.c" 2
+# 28 "main.c" 2
 
 
 
@@ -2526,15 +2526,15 @@ void conf_but(void);
 
 
 void main(void) {
-    conf_timer0();
+
     conf_but();
     while(1){
         if (Debounce_counter_b0 > 5){
-            PORTD++;
+            PORTD--;
             Debounce_counter_b0 = 0;
         }
         else if (Debounce_counter_b1 > 5){
-            PORTD--;
+            PORTD++;
             Debounce_counter_b1 = 0;
         }
 }
@@ -2546,11 +2546,10 @@ void main(void) {
 
 void conf_timer0(void){
 
-    INTCONbits.GIE = 1;
     INTCONbits.TMR0IE =1;
     OPTION_REGbits.PSA = 0;
     OPTION_REGbits.T0CS = 0;
-    OPTION_REGbits.INTEDG = 0;
+    OPTION_REGbits.INTEDG = 1;
     OPTION_REGbits.PS0 = 0;
     OPTION_REGbits.PS1 = 0;
     OPTION_REGbits.PS2 = 1;
@@ -2560,11 +2559,19 @@ void conf_timer0(void){
 
 void conf_but(void){
 
-    OPTION_REGbits.nRBPU = 1;
+    INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
+    INTCONbits.RBIE = 1;
+    ANSEL = 0;
+    ANSELH = 0;
     TRISC=0x00;
-    TRISB=0b00000011;
+    TRISB=0x00;
+    TRISBbits.TRISB0 = 1;
+    TRISBbits.TRISB1 = 1;
+    IOCB = 0b00000011;
     TRISD=0x00;
     TRISE=0x00;
+    TRISA=0;
     TRISAbits.TRISA0 = 1;
     PORTD = 0;
     PORTB = 0;
@@ -2577,13 +2584,13 @@ void conf_but(void){
 
 
 void __attribute__((picinterrupt(("")))) ISR(void){
-    if(INTCONbits.TMR0IF == 1){
-        if(PORTBbits.RB1 == 0){
-            Debounce_counter_b1++;
+    if(INTCONbits.RBIF == 1){
+        if(PORTBbits.RB1 == 1){
+            PORTD++;
         }
-        else if (PORTBbits.RB0 == 0){
-            Debounce_counter_b0++;
+        else if (PORTBbits.RB0 == 1){
+            PORTD--;
         }
-        INTCONbits.TMR0IF = 0;
+        INTCONbits.RBIF = 0;
         }
     }
