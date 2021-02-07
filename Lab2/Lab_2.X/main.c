@@ -26,6 +26,7 @@
 #pragma    config WRT = OFF        // Flash Program Memory Self Write Enable bits (Write protection off)
 
 #include <xc.h>
+#include "Adc_int_.h"
 
 //******************************************************************************
 //Variables
@@ -48,14 +49,9 @@ void conf_but(void);
 void main(void) {
     //conf_timer0();
     conf_but();
+    confADC();
     while(1){
-        // CAMBIAR ESTAS COSAS YA NO FUNCIONAN
-        if (Debounce_counter_b0 > 5){ //B0 decrementa
-            NOP
-        }
-        else if (Debounce_counter_b1 > 5){ //B1 Incrementa
-            NOP
-        }
+
 }
 }
 

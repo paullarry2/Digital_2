@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "Adc_int_.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,24 +6,9 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 13 "main.c"
-#pragma config FOSC = HS
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = ON
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config LVP = OFF
-
-
-
-#pragma config WRT = OFF
-
-
+# 1 "Adc_int_.c" 2
+# 1 "./Adc_int_.h" 1
+# 13 "./Adc_int_.h"
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2504,10 +2489,8 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 28 "main.c" 2
+# 13 "./Adc_int_.h" 2
 
-# 1 "./Adc_int_.h" 1
-# 14 "./Adc_int_.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
 typedef signed char int8_t;
@@ -2647,87 +2630,21 @@ typedef uint16_t uintptr_t;
 
 
 void confADC(void);
-# 29 "main.c" 2
+# 1 "Adc_int_.c" 2
 
 
+void confADC(){
 
 
+    ADCON0bits.ADCS0 = 1;
+    ADCON0bits.ADCS1 = 0;
+    ADCON1 = 0;
 
+    ADCON0bits.CHS = 0b0000;
 
-int Debounce_counter_b0 = 0;
-int Debounce_counter_b1 = 0;
-
-
-
-
-
-void conf_timer0(void);
-void conf_but(void);
-
-
-
-
-
-void main(void) {
-
-    conf_but();
-    confADC();
-    while(1){
-
-}
-}
-
-
-
-
-
-void conf_timer0(void){
-
-    INTCONbits.TMR0IE =1;
-    OPTION_REGbits.PSA = 0;
-    OPTION_REGbits.T0CS = 0;
-    OPTION_REGbits.INTEDG = 1;
-    OPTION_REGbits.PS0 = 0;
-    OPTION_REGbits.PS1 = 0;
-    OPTION_REGbits.PS2 = 1;
-    TMR0 = 0;
-
-}
-
-void conf_but(void){
-
-    INTCONbits.GIE = 1;
-    INTCONbits.PEIE = 1;
-    INTCONbits.RBIE = 1;
-    ANSEL = 0;
-    ANSELH = 0;
-    TRISC=0x00;
-    TRISB=0x00;
-    TRISBbits.TRISB0 = 1;
-    TRISBbits.TRISB1 = 1;
-    IOCB = 0b00000011;
-    TRISD=0x00;
-    TRISE=0x00;
-    TRISA=0;
-    TRISAbits.TRISA0 = 1;
-    PORTD = 0;
-    PORTB = 0;
-    PORTC = 0;
+    ADCON0bits.ADON = 1;
+    PIE1bits.ADIE = 1;
+    PIR1bits.ADIF = 0;
 
 
 }
-
-
-
-
-void __attribute__((picinterrupt(("")))) ISR(void){
-    if(INTCONbits.RBIF == 1){
-        if(PORTBbits.RB1 == 1){
-            PORTD++;
-        }
-        else if (PORTBbits.RB0 == 1){
-            PORTD--;
-        }
-        INTCONbits.RBIF = 0;
-        }
-    }
