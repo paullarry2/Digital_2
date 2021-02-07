@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.31 build 20201012212115 
-                                                                                               Sun Feb 07 15:52:41 2021
+                                                                                               Sun Feb 07 15:54:32 2021
 
 Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1 
      1                           	processor	16F887
@@ -705,7 +705,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    691  003F  2841               	goto	u2_21
    692  0040  2842               	goto	u2_20
    693  0041                     u2_21:
-   694  0041  2853               	goto	i1l737
+   694  0041  2854               	goto	i1l76
    695  0042                     u2_20:
    696  0042                     i1l731:
    697                           
@@ -744,7 +744,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    730  0052  0288               	subwf	8,f	;volatile
    731  0053                     i1l737:
    732                           
-   733                           ;main.c: 120:     INTCONbits.RBIF = 0;
+   733                           ;main.c: 118:         INTCONbits.RBIF = 0;
    734  0053  100B               	bcf	11,0	;volatile
    735  0054                     i1l76:
    736  0054  0872               	movf	??_ISR+2,w
@@ -930,7 +930,7 @@ DATA                 0      0       9      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.31 build 20201012212115 
-Symbol Table                                                                                   Sun Feb 07 15:52:41 2021
+Symbol Table                                                                                   Sun Feb 07 15:54:32 2021
 
                      l56 002D                       l67 0074                       l87 0087  
                      u10 0031                       u11 0030                       u57 0025  

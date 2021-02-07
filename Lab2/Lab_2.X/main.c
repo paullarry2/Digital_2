@@ -27,12 +27,13 @@
 
 #include <xc.h>
 #include "Adc_int_.h"
+#define _XTAL_FREQ (8000000)
 
 //******************************************************************************
 //Variables
 //******************************************************************************
 
-int Debounce_counter_b0 = 0;
+int ADC_value;
 int Debounce_counter_b1 = 0;
 
 //******************************************************************************
@@ -50,10 +51,17 @@ void main(void) {
     //conf_timer0();
     conf_but();
     confADC();
-    while(1){
+    while(1){ //Main Loop
+        __delay_ms(10); // Acquisition time
+        ADCON0bits.GO = 1; // Enciende la conversion
+        while (ADCON0bits.GO_nDONE){ //Hasta que no apague no sale
+        }
+        ADC_value = ADRESH; //Cuando acaba copia el valor del adresh en var ADC
+        PORTC = ADC_value; // Copio lo del puerto al ADC
+        
+    }
+}
 
-}
-}
 
 //******************************************************************************
 //Funciones
@@ -75,10 +83,11 @@ void conf_timer0(void){
 void conf_but(void){
     // CONFIGURACION PUERTOS
     INTCONbits.GIE = 1; //Habilito mis interrupciones
-    INTCONbits.PEIE = 1;
-    INTCONbits.RBIE = 1;
-    ANSEL = 0; // Indicar que el ansel y el anselh esten en 0, (digirales)
+    INTCONbits.PEIE = 1; //Habilita interrupciones perifericas
+    INTCONbits.RBIE = 1; 
+    ANSEL = 0;// Indicar que el ansel y el anselh esten en 0, (digirales)
     ANSELH = 0;
+    ANSELbits.ANS0 = 1; //Excepto el pin AN0 (Pot)
     TRISC=0x00; 
     TRISB=0x00; //Pone los puertos como outputs, en b los prim 2 pin input
     TRISBbits.TRISB0 = 1;

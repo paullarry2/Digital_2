@@ -2737,7 +2737,6 @@ void __attribute__((picinterrupt(("")))) ISR(void){
         else if (PORTBbits.RB0 == 1){
             PORTD--;
         }
-
+        INTCONbits.RBIF = 0;
         }
-    INTCONbits.RBIF = 0;
     }

@@ -598,14 +598,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 151 ]
 [e :U 150 ]
+"118
+[; ;main.c: 118:         INTCONbits.RBIF = 0;
+[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
 "119
 [; ;main.c: 119:         }
 }
 [e :U 148 ]
 "120
-[; ;main.c: 120:     INTCONbits.RBIF = 0;
-[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
-"121
-[; ;main.c: 121:     }
+[; ;main.c: 120:     }
 [e :UE 147 ]
 }
