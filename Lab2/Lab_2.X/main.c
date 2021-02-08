@@ -33,9 +33,7 @@
 //Variables
 //******************************************************************************
 
-int ADC_value;
-int Debounce_counter_b1 = 0;
-
+int adc_fin;
 //******************************************************************************
 //Llamo Funciones
 //******************************************************************************
@@ -52,13 +50,11 @@ void main(void) {
     conf_but();
     confADC();
     while(1){ //Main Loop
+        if (adc_fin == 0){ // Entra una vez se haya terminado de copiar el ADC
         __delay_ms(10); // Acquisition time
         ADCON0bits.GO = 1; // Enciende la conversion
-        while (ADCON0bits.GO_nDONE){ //Hasta que no apague no sale
+        adc_fin = 1; //Bandera para comprobar si ya se copio la conversion.
         }
-        ADC_value = ADRESH; //Cuando acaba copia el valor del adresh en var ADC
-        PORTC = ADC_value; // Copio lo del puerto al ADC
-        
     }
 }
 
@@ -107,16 +103,22 @@ void conf_but(void){
 //******************************************************************************
 //Codigo de interrupcion
 //******************************************************************************
-void __interrupt() ISR(void){//Interrupcion
-    if(INTCONbits.RBIF == 1){ // Si la bandera esta activada entre al if
+void __interrupt() ISR(void){//Interrupciones
+    if(INTCONbits.RBIF == 1){ // Si la bandera del interrupt on change "if"
         if(PORTBbits.RB1 == 1){ 
-            PORTD++;//Si el boton en pull up == 0, presionado, entre
+            PORTD++;//Si el boton esta presionado, aumenta el puerto
         }
         else if (PORTBbits.RB0 == 1){
-            PORTD--;
+            PORTD--; // Si el boton esta presionado, decrementa
         }
-        INTCONbits.RBIF = 0;//Apaga bandera al contar 1 o al no entrar
+        INTCONbits.RBIF = 0;//Apaga bandera al terminar la accion.
         }
+
+    if(PIR1bits.ADIF == 1){ //Chequea la bandera del ADC
+        PORTC = ADRESH; //Copia el valor de la conversion al puerto C
+        adc_fin = 0; //Apagar bandera de copiando conversion
+        PIR1bits.ADIF = 0;   //Apagar bandera de conversion
+    }
     }
 
 

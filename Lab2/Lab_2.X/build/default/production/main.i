@@ -2655,9 +2655,7 @@ void confADC(void);
 
 
 
-int ADC_value;
-int Debounce_counter_b1 = 0;
-
+int adc_fin;
 
 
 
@@ -2674,13 +2672,11 @@ void main(void) {
     conf_but();
     confADC();
     while(1){
+        if (adc_fin == 0){
         _delay((unsigned long)((10)*((8000000)/4000.0)));
         ADCON0bits.GO = 1;
-        while (ADCON0bits.GO_nDONE){
+        adc_fin = 1;
         }
-        ADC_value = ADRESH;
-        PORTC = ADC_value;
-
     }
 }
 
@@ -2737,7 +2733,12 @@ void __attribute__((picinterrupt(("")))) ISR(void){
         else if (PORTBbits.RB0 == 1){
             PORTD--;
         }
-
+        INTCONbits.RBIF = 0;
         }
-    INTCONbits.RBIF = 0;
+
+    if(PIR1bits.ADIF == 1){
+        PORTC = ADRESH;
+        adc_fin = 0;
+        PIR1bits.ADIF = 0;
+    }
     }
