@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "7_Segments.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,24 +6,9 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 13 "main.c"
-#pragma config FOSC = HS
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = ON
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config LVP = OFF
-
-
-
-#pragma config WRT = OFF
-
-
+# 1 "7_Segments.c" 2
+# 1 "./7_Segments.h" 1
+# 13 "./7_Segments.h"
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2504,10 +2489,8 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 28 "main.c" 2
+# 13 "./7_Segments.h" 2
 
-# 1 "./Adc_int_.h" 1
-# 14 "./Adc_int_.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
 typedef signed char int8_t;
@@ -2641,17 +2624,6 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 14 "./Adc_int_.h" 2
-
-
-
-
-void confADC(void);
-# 29 "main.c" 2
-
-# 1 "./7_Segments.h" 1
-# 14 "./7_Segments.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
 # 14 "./7_Segments.h" 2
 
 
@@ -2662,104 +2634,28 @@ unsigned char Pos[2] = {5, 3};
 
 void conf_timer0(void);
 void change(unsigned int nu);
-# 30 "main.c" 2
-# 39 "main.c"
-int adc_fin;
-unsigned char Actual = 0;
-unsigned char Num[10] = {0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x6F};
+# 1 "7_Segments.c" 2
 
 
+void conf_timer0(){
 
-
-void conf_but(void);
-
-
-
-
-
-void main(void) {
-
-    conf_but();
-    confADC();
-    adc_fin = 0;
-    RE0 = RE1 = 0;
-    conf_timer0();
-    unsigned int x=0;
-    while(1){
-        if (adc_fin == 0){
-        _delay((unsigned long)((10)*((8000000)/4000.0)));
-        ADCON0bits.GO = 1;
-        adc_fin = 1;
-        }
-        _delay((unsigned long)((20)*((8000000)/4000.0)));
-        change(x++);
-    }
-}
-# 78 "main.c"
-void conf_but(void){
-
-    INTCONbits.GIE = 1;
-    INTCONbits.PEIE = 1;
-    INTCONbits.RBIE = 1;
-    ANSEL = 0;
-    ANSELH = 0;
-    ANSELbits.ANS0 = 1;
-    TRISC=0x00;
-    TRISB=0x00;
-    TRISBbits.TRISB0 = 1;
-    TRISBbits.TRISB1 = 1;
-    IOCB = 0b00000011;
-    TRISD=0x00;
-    TRISE=0x00;
-    TRISA=0;
-    TRISAbits.TRISA0 = 1;
-    PORTD = 0;
-    PORTB = 0;
-    PORTC = 0;
-    PORTE = 0;
-
-
-}
-
-
-
-
-void __attribute__((picinterrupt(("")))) ISR(void){
-    if(INTCONbits.RBIF == 1){
-        if(PORTBbits.RB1 == 1){
-            PORTD++;
-        }
-        else if (PORTBbits.RB0 == 1){
-            PORTD--;
-        }
-        INTCONbits.RBIF = 0;
-        }
-
-    if(PIR1bits.ADIF == 1){
-        PORTC = ADRESH;
-        adc_fin = 0;
-        PIR1bits.ADIF = 0;
-    }
-    if(T0IF){
-        if(Actual==0)
-    {
-      PORTC = 0x00;
-      RE0 = 1;
-      RE1 = 0;
-      PORTC = Num[Pos[0]];
-    }
-    if(Actual==1)
-    {
-      PORTC = 0x00;
-      RE1 = 1;
-      RE0 = 0;
-      PORTC = Num[Pos[1]];
-    }
-    Actual++;
-    if(Actual==2){
-    Actual=0;
-    T0IF = 0;
+    INTCONbits.TMR0IE =1;
+    OPTION_REGbits.PSA = 0;
+    OPTION_REGbits.T0CS = 0;
+    OPTION_REGbits.INTEDG = 1;
+    OPTION_REGbits.PS0 = 0;
+    OPTION_REGbits.PS1 = 0;
+    OPTION_REGbits.PS2 = 1;
     TMR0 = 0;
+
+}
+
+void change(unsigned int nu)
+{
+  if(nu<=99)
+  {
+    Pos[0] = nu / 10;
+    nu%=10;
+    Pos[1] = nu;
   }
-    }
-    }
+}

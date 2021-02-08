@@ -27,6 +27,9 @@
 
 #include <xc.h>
 #include "Adc_int_.h"
+#include "7_Segments.h"
+#define Multiplex1 RE0
+#define Multiplex2 RE1
 #define _XTAL_FREQ (8000000)
 
 //******************************************************************************
@@ -34,11 +37,12 @@
 //******************************************************************************
 
 int adc_fin;
+unsigned char Actual = 0;
+unsigned char Num[10] = {0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x6F};
 //******************************************************************************
 //Llamo Funciones
 //******************************************************************************
 
-void conf_timer0(void);
 void conf_but(void);
 
 //******************************************************************************
@@ -49,12 +53,18 @@ void main(void) {
     //conf_timer0();
     conf_but();
     confADC();
+    adc_fin = 0;
+    Multiplex1 = Multiplex2 = 0;
+    conf_timer0();
+    unsigned int x=0;
     while(1){ //Main Loop
         if (adc_fin == 0){ // Entra una vez se haya terminado de copiar el ADC
         __delay_ms(10); // Acquisition time
         ADCON0bits.GO = 1; // Enciende la conversion
         adc_fin = 1; //Bandera para comprobar si ya se copio la conversion.
         }
+        __delay_ms(20);
+        change(x++);
     }
 }
 
@@ -63,18 +73,7 @@ void main(void) {
 //Funciones
 //******************************************************************************
 
-void conf_timer0(void){ 
-    // CONFIGURO MI INTERRUPCION DE TIMER0
-    INTCONbits.TMR0IE =1; //Habilito el timer0
-    OPTION_REGbits.PSA = 0; //Este bit puede habilitar al WDT o al T0(ahorita)
-    OPTION_REGbits.T0CS = 0; //Si tenemos cristal interno o externo, toma el int
-    OPTION_REGbits.INTEDG = 1; // flanco subida o bajada, este bajada
-    OPTION_REGbits.PS0 = 0;
-    OPTION_REGbits.PS1 = 0; // Set prescaler a 1:32 sin precarga 4ms por int
-    OPTION_REGbits.PS2 = 1;
-    TMR0 = 0; 
-    // TERMINA CONFIG TIMER0  
-}
+
 
 void conf_but(void){
     // CONFIGURACION PUERTOS
@@ -96,6 +95,7 @@ void conf_but(void){
     PORTD = 0;
     PORTB = 0;
     PORTC = 0;
+    PORTE = 0;
     
     
 }
@@ -118,6 +118,28 @@ void __interrupt() ISR(void){//Interrupciones
         PORTC = ADRESH; //Copia el valor de la conversion al puerto C
         adc_fin = 0; //Apagar bandera de copiando conversion
         PIR1bits.ADIF = 0;   //Apagar bandera de conversion
+    }
+    if(T0IF){
+        if(Actual==0) 
+    {
+      PORTC = 0x00;
+      Multiplex1 = 1;
+      Multiplex2 = 0;
+      PORTC = Num[Pos[0]];
+    }
+    if(Actual==1)
+    {
+      PORTC = 0x00;
+      Multiplex2 = 1;
+      Multiplex1 = 0;
+      PORTC = Num[Pos[1]];
+    }
+    Actual++;
+    if(Actual==2){
+    Actual=0;
+    T0IF = 0;
+    TMR0 = 0; // Preloading Timer1
+  }
     }
     }
 
