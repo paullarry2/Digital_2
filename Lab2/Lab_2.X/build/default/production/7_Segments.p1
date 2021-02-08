@@ -301,26 +301,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "16
 [v _change `(v ~T0 @X0 1 ef1`ui ]
-"17
 {
 [e :U _change ]
-"16
 [v _nu `ui ~T0 @X0 1 r1 ]
-"17
 [f ]
-"18
+"17
 [e $ ! <= _nu -> -> 99 `i `ui 140  ]
-"19
 {
-"20
+"18
 [e = *U + &U _Pos * -> -> -> 0 `i `ui `ux -> -> # *U &U _Pos `ui `ux -> / _nu -> -> 10 `i `ui `uc ]
-"21
+"19
 [e =% _nu -> -> 10 `i `ui ]
-"22
+"20
 [e = *U + &U _Pos * -> -> -> 1 `i `ui `ux -> -> # *U &U _Pos `ui `ux -> _nu `uc ]
-"23
+"21
 }
 [e :U 140 ]
-"24
+"22
 [e :UE 139 ]
 }

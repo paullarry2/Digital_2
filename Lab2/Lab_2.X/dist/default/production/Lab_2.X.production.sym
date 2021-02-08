@@ -189,7 +189,7 @@ cstackCOMMON 70 79 COMMON 70 1
 dataBANK0 20 37 BANK0 20 1
 %locals
 dist/default/production\Lab_2.X.production.o
-C:\Users\Universidad\AppData\Local\Temp\spck.s
+C:\Users\Universidad\AppData\Local\Temp\s2244.s
 824 11 0 CODE 0
 827 11 0 CODE 0
 886 11 0 CODE 0
@@ -285,11 +285,11 @@ Adc_int_.c
 17 1C7 0 CODE 0
 7_Segments.c
 16 151 0 CODE 0
-18 151 0 CODE 0
-20 15C 0 CODE 0
-21 16F 0 CODE 0
-22 182 0 CODE 0
-24 186 0 CODE 0
+17 151 0 CODE 0
+18 15C 0 CODE 0
+19 16F 0 CODE 0
+20 182 0 CODE 0
+22 186 0 CODE 0
 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwmod.c
 5 115 0 CODE 0
 12 115 0 CODE 0

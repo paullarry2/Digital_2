@@ -2637,9 +2637,9 @@ void change(unsigned int nu);
 # 1 "7_Segments.c" 2
 
 
-void conf_timer0(){
+void conf_timer0() {
 
-    INTCONbits.TMR0IE =1;
+    INTCONbits.TMR0IE = 1;
     OPTION_REGbits.PSA = 0;
     OPTION_REGbits.T0CS = 0;
     OPTION_REGbits.INTEDG = 1;
@@ -2650,12 +2650,10 @@ void conf_timer0(){
 
 }
 
-void change(unsigned int nu)
-{
-  if(nu<=99)
-  {
-    Pos[0] = nu / 10;
-    nu%=10;
-    Pos[1] = nu;
-  }
+void change(unsigned int nu) {
+    if (nu <= 99) {
+        Pos[0] = nu / 10;
+        nu %= 10;
+        Pos[1] = nu;
+    }
 }
