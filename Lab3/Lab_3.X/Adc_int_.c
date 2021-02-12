@@ -15,7 +15,7 @@ void confADC(){
     
       
 }
-void conf_ch(char sel){
+void conf_ch(int sel){
     if (sel == 0){
         ADCON0bits.CHS = 0b0000;
     }

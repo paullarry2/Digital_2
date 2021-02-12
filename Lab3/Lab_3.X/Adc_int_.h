@@ -16,7 +16,7 @@
 //Llamo Funciones
 //******************************************************************************
 void confADC(void);
-void conf_ch(char sel);
+void conf_ch(int sel);
 
 #endif	/* XC_HEADER_TEMPLATE_H */
 
