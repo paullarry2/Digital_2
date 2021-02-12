@@ -7,20 +7,16 @@
  * Created on 7 de febrero de 2021, 01:19 PM
  */
 
-#ifndef __7_SEGMENTS_
-#define	__7_SEGMENTS_
+#ifndef __ADC_INT_H_
+#define	__ADC_INT_H_
 
 #include <xc.h>
 #include <stdint.h>
-
-
-//unsigned char Pos[2] = {5, 3};
 //******************************************************************************
 //Llamo Funciones
 //******************************************************************************
-void conf_timer0(void);
-//void change_(unsigned int nu);
-
+void confADC(void);
+void conf_ch(char sel);
 
 #endif	/* XC_HEADER_TEMPLATE_H */
 

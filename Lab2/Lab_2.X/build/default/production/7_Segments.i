@@ -2628,12 +2628,11 @@ typedef uint16_t uintptr_t;
 
 
 
-unsigned char Pos[2] = {5, 3};
+
 
 
 
 void conf_timer0(void);
-void change(unsigned int nu);
 # 1 "7_Segments.c" 2
 
 
@@ -2646,14 +2645,7 @@ void conf_timer0() {
     OPTION_REGbits.PS0 = 0;
     OPTION_REGbits.PS1 = 0;
     OPTION_REGbits.PS2 = 1;
+
     TMR0 = 0;
 
-}
-
-void change(unsigned int nu) {
-    if (nu <= 99) {
-        Pos[0] = nu / 10;
-        nu %= 10;
-        Pos[1] = nu;
-    }
 }

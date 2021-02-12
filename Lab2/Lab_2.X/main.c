@@ -10,7 +10,7 @@
 //******************************************************************************
 // CONFIG1
 
-#pragma config FOSC = HS// Oscillator Selection bits (RC oscillator: CLKOUT function on RA6/OSC2/CLKOUT pin, RC on RA7/OSC1/CLKIN)
+#pragma config FOSC = INTRC_NOCLKOUT // Oscillator Selection bits (RC oscillator: CLKOUT function on RA6/OSC2/CLKOUT pin, RC on RA7/OSC1/CLKIN)
 #pragma config WDTE = OFF       // Watchdog Timer Enable bit (WDT disabled and can be enabled by SWDTEN bit of the WDTCON register)
 #pragma config PWRTE = OFF      // Power-up Timer Enable bit (PWRT disabled)
 #pragma config MCLRE = OFF       // RE3/MCLR pin function select bit (RE3/MCLR pin function is MCLR)
@@ -39,11 +39,14 @@
 int adc_fin;
 unsigned char Actual = 0;
 unsigned char Num[10] = {0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x6F};
+unsigned char Pos[2] = {5, 3};
 //******************************************************************************
 //Llamo Funciones
 //******************************************************************************
 
 void conf_but(void);
+void change(unsigned int nu);
+
 
 //******************************************************************************
 //Ciclo Principal
@@ -72,7 +75,13 @@ void main(void) {
 //******************************************************************************
 //Funciones
 //******************************************************************************
-
+void change(unsigned int nu) {
+    if (nu <= 99) {
+        Pos[0] = nu / 10; //DECENA
+        nu %= 10;
+        Pos[1] = nu; //UNIDADES
+    }
+}
 
 
 void conf_but(void){

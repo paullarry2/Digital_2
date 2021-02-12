@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.31\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\Lab_2.X.production.sym \
   --cmf=dist/default/production\Lab_2.X.production.cmf -z -Q16F887 \
-  -oC:\Users\Universidad\AppData\Local\Temp\s2244.2 \
+  -oC:\Users\Universidad\AppData\Local\Temp\s20e8.2 \
   --defsym=__MPLAB_BUILD=1 -Mdist/default/production/Lab_2.X.production.map \
   -E1 -ver=XC8 Compiler --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK \
   -ACODE=00h-07FFhx4 -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 \
@@ -18,7 +18,7 @@ Linker command line:
   -AEEDATA=00h-0FFh/02100h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE -pcinit=CODE \
-  -pfunctab=ENTRY -k C:\Users\Universidad\AppData\Local\Temp\s2244.o \
+  -pfunctab=ENTRY -k C:\Users\Universidad\AppData\Local\Temp\s20e8.o \
   dist/default/production\Lab_2.X.production.o 
 
 Object code version is 3.11
@@ -28,7 +28,7 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Universidad\AppData\Local\Temp\s2244.o
+C:\Users\Universidad\AppData\Local\Temp\s20e8.o
                 end_init                              E        E        3        8       0
                 reset_vec                             0        0        3        0       0
                 config                             2007     2007        2        0       4
@@ -346,7 +346,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 52 in file "main.c"
+		line 55 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -408,7 +408,7 @@ Total ram usage:        0 bytes
 
  *************** function _conf_but *****************
  Defined at:
-		line 78 in file "main.c"
+		line 87 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -468,7 +468,7 @@ Total ram usage:        0 bytes
 
  *************** function _change *****************
  Defined at:
-		line 16 in file "7_Segments.c"
+		line 78 in file "main.c"
  Parameters:    Size  Location     Type
   nu              2    3[BANK0 ] unsigned int 
  Auto vars:     Size  Location     Type
@@ -562,7 +562,7 @@ Total ram usage:        8 bytes
 
  *************** function _ISR *****************
  Defined at:
-		line 106 in file "main.c"
+		line 115 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -604,10 +604,9 @@ Adc_int_.c
 Adc_int_.c estimated size: 19
 
 7_Segments.c
-		_change        		CODE           	0151	0000	54
 		_conf_timer0   		CODE           	01C8	0000	13
 
-7_Segments.c estimated size: 67
+7_Segments.c estimated size: 13
 
 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
 		___lwdiv       		CODE           	00CF	0000	70
@@ -622,7 +621,8 @@ shared estimated size: 17
 main.c
 		_ISR           		CODE           	0026	0000	87
 		_main          		CODE           	007D	0000	82
+		_change        		CODE           	0151	0000	54
 		_conf_but      		CODE           	0187	0000	27
 
-main.c estimated size: 196
+main.c estimated size: 250
 
