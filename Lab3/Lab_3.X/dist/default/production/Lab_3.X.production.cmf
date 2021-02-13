@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\Universidad\AppData\Local\Temp\s6uk.o
+$C:\Users\Universidad\AppData\Local\Temp\sc08.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 16 16 3 2
 config CONFIG 4 2007 2007 2 2
@@ -24,10 +24,10 @@ text4 CODE 0 1CD2 1CD2 54 2
 text5 CODE 0 1A85 1A85 1C 2
 text6 CODE 0 1B4A 1B4A 26 2
 text7 CODE 0 1E4E 1E4E 6A 2
-text8 CODE 0 7F0 7F0 D 2
+text8 CODE 0 7F2 7F2 D 2
 text9 CODE 0 1ABD 1ABD 20 2
 text10 CODE 0 1A10 1A10 8 2
-text11 CODE 0 686 686 143 2
+text11 CODE 0 686 686 145 2
 text12 CODE 0 1BAA 1BAA 42 2
 text13 CODE 0 1003 1003 16 2
 text14 CODE 0 1B01 1B01 24 2
@@ -42,7 +42,7 @@ text22 CODE 0 136D 136D 20B 2
 text23 CODE 0 1B70 1B70 3A 2
 text24 CODE 0 1BEC 1BEC 44 2
 text25 CODE 0 C9F C9F 361 2
-text26 CODE 0 7C9 7C9 27 2
+text26 CODE 0 7CB 7CB 27 2
 text27 CODE 0 10D3 10D3 BD 2
 text28 CODE 0 882 882 BE 2
 text29 CODE 0 1019 1019 BA 2
@@ -82,17 +82,17 @@ BANK1 D1-EF 1
 BANK2 110-16F 1
 BANK3 1E0-1EF 1
 CONST 3-3 2
-CONST 7FD-7FF 2
+CONST 7FF-7FF 2
 CONST 1000-1002 2
 CONST 18B1-1A0F 2
 ENTRY 3-3 2
-ENTRY 7FD-7FF 2
+ENTRY 7FF-7FF 2
 ENTRY 1000-1002 2
 ENTRY 18B1-1A0F 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
 CODE 3-3 2
-CODE 7FD-7FF 2
+CODE 7FF-7FF 2
 CODE 1000-1002 2
 CODE 18B1-1A0F 2
 SFR0 0-1F 1
@@ -101,11 +101,11 @@ SFR2 100-10F 1
 SFR3 180-18F 1
 EEDATA 2100-21FF 2
 STRCODE 3-3 2
-STRCODE 7FD-7FF 2
+STRCODE 7FF-7FF 2
 STRCODE 1000-1002 2
 STRCODE 18B1-1A0F 2
 STRING 3-3 2
-STRING 7FD-7FF 2
+STRING 7FF-7FF 2
 STRING 1000-1002 2
 STRING 18B1-1A0F 2
 # %LINETAB Section
@@ -122,24 +122,24 @@ STRING 18B1-1A0F 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Lab_3.X.production.o
-19 cinit CODE >1096:C:\Users\Universidad\AppData\Local\Temp\s6uk.s
-19 cinit CODE >1099:C:\Users\Universidad\AppData\Local\Temp\s6uk.s
-19 cinit CODE >1143:C:\Users\Universidad\AppData\Local\Temp\s6uk.s
-1A cinit CODE >1144:C:\Users\Universidad\AppData\Local\Temp\s6uk.s
-1B cinit CODE >1145:C:\Users\Universidad\AppData\Local\Temp\s6uk.s
-1C cinit CODE >1146:C:\Users\Universidad\AppData\Local\Temp\s6uk.s
-1D cinit CODE >1147:C:\Users\Universidad\AppData\Local\Temp\s6uk.s
-1E cinit CODE >1148:C:\Users\Universidad\AppData\Local\Temp\s6uk.s
-1F cinit CODE >1149:C:\Users\Universidad\AppData\Local\Temp\s6uk.s
-20 cinit CODE >1150:C:\Users\Universidad\AppData\Local\Temp\s6uk.s
-21 cinit CODE >1153:C:\Users\Universidad\AppData\Local\Temp\s6uk.s
-22 cinit CODE >1154:C:\Users\Universidad\AppData\Local\Temp\s6uk.s
-23 cinit CODE >1155:C:\Users\Universidad\AppData\Local\Temp\s6uk.s
-24 cinit CODE >1156:C:\Users\Universidad\AppData\Local\Temp\s6uk.s
-25 cinit CODE >1157:C:\Users\Universidad\AppData\Local\Temp\s6uk.s
-2A cinit CODE >1163:C:\Users\Universidad\AppData\Local\Temp\s6uk.s
-2A cinit CODE >1165:C:\Users\Universidad\AppData\Local\Temp\s6uk.s
-2B cinit CODE >1166:C:\Users\Universidad\AppData\Local\Temp\s6uk.s
+19 cinit CODE >1096:C:\Users\Universidad\AppData\Local\Temp\sc08.s
+19 cinit CODE >1099:C:\Users\Universidad\AppData\Local\Temp\sc08.s
+19 cinit CODE >1143:C:\Users\Universidad\AppData\Local\Temp\sc08.s
+1A cinit CODE >1144:C:\Users\Universidad\AppData\Local\Temp\sc08.s
+1B cinit CODE >1145:C:\Users\Universidad\AppData\Local\Temp\sc08.s
+1C cinit CODE >1146:C:\Users\Universidad\AppData\Local\Temp\sc08.s
+1D cinit CODE >1147:C:\Users\Universidad\AppData\Local\Temp\sc08.s
+1E cinit CODE >1148:C:\Users\Universidad\AppData\Local\Temp\sc08.s
+1F cinit CODE >1149:C:\Users\Universidad\AppData\Local\Temp\sc08.s
+20 cinit CODE >1150:C:\Users\Universidad\AppData\Local\Temp\sc08.s
+21 cinit CODE >1153:C:\Users\Universidad\AppData\Local\Temp\sc08.s
+22 cinit CODE >1154:C:\Users\Universidad\AppData\Local\Temp\sc08.s
+23 cinit CODE >1155:C:\Users\Universidad\AppData\Local\Temp\sc08.s
+24 cinit CODE >1156:C:\Users\Universidad\AppData\Local\Temp\sc08.s
+25 cinit CODE >1157:C:\Users\Universidad\AppData\Local\Temp\sc08.s
+2A cinit CODE >1163:C:\Users\Universidad\AppData\Local\Temp\sc08.s
+2A cinit CODE >1165:C:\Users\Universidad\AppData\Local\Temp\sc08.s
+2B cinit CODE >1166:C:\Users\Universidad\AppData\Local\Temp\sc08.s
 4 intentry CODE >118:C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\main.c
 1190 text39 CODE >8:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcdiv.c
 1190 text39 CODE >26:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcdiv.c
@@ -525,17 +525,17 @@ $dist/default/production\Lab_3.X.production.o
 1182 text27 CODE >98:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\ftdivl.c
 1187 text27 CODE >100:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\ftdivl.c
 118F text27 CODE >101:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\ftdivl.c
-7C9 text26 CODE >4:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
-7CA text26 CODE >5:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
-7CC text26 CODE >6:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
-7D3 text26 CODE >51:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
-7D7 text26 CODE >52:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
-7DD text26 CODE >53:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
-7DD text26 CODE >54:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
-7E4 text26 CODE >55:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
-7E6 text26 CODE >56:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
-7EB text26 CODE >59:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
-7EF text26 CODE >60:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
+7CB text26 CODE >4:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
+7CC text26 CODE >5:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
+7CE text26 CODE >6:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
+7D5 text26 CODE >51:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
+7D9 text26 CODE >52:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
+7DF text26 CODE >53:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
+7DF text26 CODE >54:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
+7E6 text26 CODE >55:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
+7E8 text26 CODE >56:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
+7ED text26 CODE >59:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
+7F1 text26 CODE >60:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
 C9F text25 CODE >8:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcmul.c
 C9F text25 CODE >17:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcmul.c
 CA6 text25 CODE >18:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcmul.c
@@ -861,9 +861,9 @@ FC text17 CODE >858:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\
 739 text11 CODE >134:C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\main.c
 73B text11 CODE >135:C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\main.c
 798 text11 CODE >136:C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\main.c
-7A0 text11 CODE >137:C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\main.c
-7B5 text11 CODE >141:C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\main.c
-7B8 text11 CODE >142:C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\main.c
+7A2 text11 CODE >137:C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\main.c
+7B7 text11 CODE >141:C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\main.c
+7BA text11 CODE >142:C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\main.c
 1A10 text10 CODE >8:C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\lcd.c
 1A13 text10 CODE >9:C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\lcd.c
 1A17 text10 CODE >10:C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\lcd.c
@@ -874,10 +874,10 @@ FC text17 CODE >858:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\
 1ACE text9 CODE >16:C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\lcd.c
 1AD9 text9 CODE >17:C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\lcd.c
 1ADC text9 CODE >18:C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\lcd.c
-7F0 text8 CODE >20:C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\lcd.c
-7F0 text8 CODE >21:C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\lcd.c
-7F6 text8 CODE >22:C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\lcd.c
-7FC text8 CODE >23:C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\lcd.c
+7F2 text8 CODE >20:C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\lcd.c
+7F2 text8 CODE >21:C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\lcd.c
+7F8 text8 CODE >22:C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\lcd.c
+7FE text8 CODE >23:C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\lcd.c
 1E4E text7 CODE >36:C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\lcd.c
 1E4E text7 CODE >37:C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\lcd.c
 1E5D text7 CODE >38:C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\lcd.c
@@ -971,16 +971,16 @@ FC text17 CODE >858:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\
 1FE5 maintext CODE >79:C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\main.c
 1FEE maintext CODE >80:C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\main.c
 1FF9 maintext CODE >81:C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\main.c
-1A18 clrtext CODE >1130:C:\Users\Universidad\AppData\Local\Temp\s6uk.s
-1A18 clrtext CODE >1131:C:\Users\Universidad\AppData\Local\Temp\s6uk.s
-1A19 clrtext CODE >1132:C:\Users\Universidad\AppData\Local\Temp\s6uk.s
-1A19 clrtext CODE >1133:C:\Users\Universidad\AppData\Local\Temp\s6uk.s
-1A1A clrtext CODE >1134:C:\Users\Universidad\AppData\Local\Temp\s6uk.s
-1A1B clrtext CODE >1135:C:\Users\Universidad\AppData\Local\Temp\s6uk.s
-1A1C clrtext CODE >1136:C:\Users\Universidad\AppData\Local\Temp\s6uk.s
-1A1D clrtext CODE >1137:C:\Users\Universidad\AppData\Local\Temp\s6uk.s
-1A1E clrtext CODE >1138:C:\Users\Universidad\AppData\Local\Temp\s6uk.s
-1A1F clrtext CODE >1139:C:\Users\Universidad\AppData\Local\Temp\s6uk.s
+1A18 clrtext CODE >1130:C:\Users\Universidad\AppData\Local\Temp\sc08.s
+1A18 clrtext CODE >1131:C:\Users\Universidad\AppData\Local\Temp\sc08.s
+1A19 clrtext CODE >1132:C:\Users\Universidad\AppData\Local\Temp\sc08.s
+1A19 clrtext CODE >1133:C:\Users\Universidad\AppData\Local\Temp\sc08.s
+1A1A clrtext CODE >1134:C:\Users\Universidad\AppData\Local\Temp\sc08.s
+1A1B clrtext CODE >1135:C:\Users\Universidad\AppData\Local\Temp\sc08.s
+1A1C clrtext CODE >1136:C:\Users\Universidad\AppData\Local\Temp\sc08.s
+1A1D clrtext CODE >1137:C:\Users\Universidad\AppData\Local\Temp\sc08.s
+1A1E clrtext CODE >1138:C:\Users\Universidad\AppData\Local\Temp\sc08.s
+1A1F clrtext CODE >1139:C:\Users\Universidad\AppData\Local\Temp\sc08.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -1009,11 +1009,11 @@ __end_of_Lcd_Init 3D70 0 CODE 0 text7 dist/default/production\Lab_3.X.production
 __end_of_Lcd_Port 3430 0 CODE 0 text10 dist/default/production\Lab_3.X.production.o
 __Hstrings 0 0 ABS 0 strings -
 i1_Lcd_Set_Cursor 3602 0 CODE 0 text14 dist/default/production\Lab_3.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\Universidad\AppData\Local\Temp\s6uk.o
+___sp 0 0 STACK 2 stack C:\Users\Universidad\AppData\Local\Temp\sc08.o
 _main 3EB4 0 CODE 0 maintext dist/default/production\Lab_3.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Lab_3.X.production.o
 _Lcd_Write_Char 350A 0 CODE 0 text5 dist/default/production\Lab_3.X.production.o
-start 2C 0 CODE 0 init C:\Users\Universidad\AppData\Local\Temp\s6uk.o
+start 2C 0 CODE 0 init C:\Users\Universidad\AppData\Local\Temp\sc08.o
 ___flmul@aexp 36 0 BANK0 1 cstackBANK0 dist/default/production\Lab_3.X.production.o
 ___flmul@bexp 37 0 BANK0 1 cstackBANK0 dist/default/production\Lab_3.X.production.o
 ___flmul@prod 38 0 BANK0 1 cstackBANK0 dist/default/production\Lab_3.X.production.o
@@ -1041,12 +1041,12 @@ __end_of__npowers_ 30F0 0 STRING 0 strings dist/default/production\Lab_3.X.produ
 i1Lcd_Set_Cursor@a 76 0 COMMON 1 cstackCOMMON dist/default/production\Lab_3.X.production.o
 i1Lcd_Set_Cursor@b 74 0 COMMON 1 cstackCOMMON dist/default/production\Lab_3.X.production.o
 _sprintf$1046 AA 0 BANK1 1 cstackBANK1 dist/default/production\Lab_3.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\Universidad\AppData\Local\Temp\s6uk.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\Universidad\AppData\Local\Temp\s6uk.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\Universidad\AppData\Local\Temp\s6uk.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\Universidad\AppData\Local\Temp\s6uk.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\Universidad\AppData\Local\Temp\s6uk.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\Universidad\AppData\Local\Temp\s6uk.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\Universidad\AppData\Local\Temp\sc08.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\Universidad\AppData\Local\Temp\sc08.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\Universidad\AppData\Local\Temp\sc08.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\Universidad\AppData\Local\Temp\sc08.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\Universidad\AppData\Local\Temp\sc08.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\Universidad\AppData\Local\Temp\sc08.o
 __size_of__div_to_l_ 0 0 ABS 0 - dist/default/production\Lab_3.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Lab_3.X.production.o
 ___llmod@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\Lab_3.X.production.o
@@ -1062,7 +1062,7 @@ ___wmul@multiplicand 72 0 COMMON 1 cstackCOMMON dist/default/production\Lab_3.X.
 _ADCON1 9F 0 ABS 0 - dist/default/production\Lab_3.X.production.o
 _ADRESH 1E 0 ABS 0 - dist/default/production\Lab_3.X.production.o
 _ANSELH 189 0 ABS 0 - dist/default/production\Lab_3.X.production.o
-__end_of__Umul8_16 FE0 0 CODE 0 text26 dist/default/production\Lab_3.X.production.o
+__end_of__Umul8_16 FE4 0 CODE 0 text26 dist/default/production\Lab_3.X.production.o
 _scale$1045 4C 0 BANK0 1 cstackBANK0 dist/default/production\Lab_3.X.production.o
 ___awdiv@dividend 79 0 COMMON 1 cstackCOMMON dist/default/production\Lab_3.X.production.o
 i1_Lcd_Write_String 3754 0 CODE 0 text12 dist/default/production\Lab_3.X.production.o
@@ -1084,7 +1084,7 @@ ___lwmod@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\Lab_3.X.prod
 __size_ofi1_Lcd_Set_Cursor 0 0 ABS 0 - dist/default/production\Lab_3.X.production.o
 __end_of___awdiv 3C9C 0 CODE 0 text20 dist/default/production\Lab_3.X.production.o
 __end_of___awmod 3AFE 0 CODE 0 text19 dist/default/production\Lab_3.X.production.o
-__Umul8_16 F92 0 CODE 0 text26 dist/default/production\Lab_3.X.production.o
+__Umul8_16 F96 0 CODE 0 text26 dist/default/production\Lab_3.X.production.o
 __end_of___fladd 3000 0 CODE 0 text35 dist/default/production\Lab_3.X.production.o
 __end_of___fldiv 26DA 0 CODE 0 text39 dist/default/production\Lab_3.X.production.o
 __end_of___flmul 2000 0 CODE 0 text25 dist/default/production\Lab_3.X.production.o
@@ -1099,8 +1099,8 @@ __size_of_isdigit 0 0 ABS 0 - dist/default/production\Lab_3.X.production.o
 __end_of_config 357A 0 CODE 0 text1 dist/default/production\Lab_3.X.production.o
 _adc_fin 190 0 BANK3 1 bssBANK3 dist/default/production\Lab_3.X.production.o
 __Umul8_16@multiplicand 70 0 COMMON 1 cstackCOMMON dist/default/production\Lab_3.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\Universidad\AppData\Local\Temp\s6uk.o
-___stacklo 0 0 ABS 0 - C:\Users\Universidad\AppData\Local\Temp\s6uk.o
+___stackhi 0 0 ABS 0 - C:\Users\Universidad\AppData\Local\Temp\sc08.o
+___stacklo 0 0 ABS 0 - C:\Users\Universidad\AppData\Local\Temp\sc08.o
 _dpowers 30F0 0 STRING 0 strings dist/default/production\Lab_3.X.production.o
 __size_of__tdiv_to_l_ 0 0 ABS 0 - dist/default/production\Lab_3.X.production.o
 __end_of_fround 2AF0 0 CODE 0 text22 dist/default/production\Lab_3.X.production.o
@@ -1132,7 +1132,7 @@ __tdiv_to_l_@f1 70 0 COMMON 1 cstackCOMMON dist/default/production\Lab_3.X.produ
 __tdiv_to_l_@f2 74 0 COMMON 1 cstackCOMMON dist/default/production\Lab_3.X.production.o
 __size_of_Lcd_Cmd 0 0 ABS 0 - dist/default/production\Lab_3.X.production.o
 _isdigit$862 70 0 COMMON 1 cstackCOMMON dist/default/production\Lab_3.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\Universidad\AppData\Local\Temp\s6uk.o
+___int_sp 0 0 STACK 2 stack C:\Users\Universidad\AppData\Local\Temp\sc08.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -1202,8 +1202,8 @@ sprintf@val B1 0 BANK1 1 cstackBANK1 dist/default/production\Lab_3.X.production.
 __end_of_Lcd_Write_String 3A4C 0 CODE 0 text4 dist/default/production\Lab_3.X.production.o
 ___xxtofl 2032 0 CODE 0 text29 dist/default/production\Lab_3.X.production.o
 _fround 26DA 0 CODE 0 text22 dist/default/production\Lab_3.X.production.o
-__end_of_ISR F92 0 CODE 0 text11 dist/default/production\Lab_3.X.production.o
-__end_of_Lcd_Clear FFA 0 CODE 0 text8 dist/default/production\Lab_3.X.production.o
+__end_of_ISR F96 0 CODE 0 text11 dist/default/production\Lab_3.X.production.o
+__end_of_Lcd_Clear FFE 0 CODE 0 text8 dist/default/production\Lab_3.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
 ___lldiv@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\Lab_3.X.production.o
 __size_of_Lcd_Write_String 0 0 ABS 0 - dist/default/production\Lab_3.X.production.o
@@ -1211,7 +1211,7 @@ __stringtab 3000 0 STRING 0 strings dist/default/production\Lab_3.X.production.o
 Lcd_Write_String@a 1D7 0 BANK3 1 cstackBANK3 dist/default/production\Lab_3.X.production.o
 Lcd_Write_String@i 1DC 0 BANK3 1 cstackBANK3 dist/default/production\Lab_3.X.production.o
 __size_ofi1_Lcd_Write_String 0 0 ABS 0 - dist/default/production\Lab_3.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Universidad\AppData\Local\Temp\s6uk.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Universidad\AppData\Local\Temp\sc08.o
 __size_of_Lcd_Clear 0 0 ABS 0 - dist/default/production\Lab_3.X.production.o
 __end_ofi1_Lcd_Cmd 34D4 0 CODE 0 text15 dist/default/production\Lab_3.X.production.o
 __end_of___xxtofl 21A6 0 CODE 0 text29 dist/default/production\Lab_3.X.production.o
@@ -1253,7 +1253,7 @@ __ptext22 26DA 0 CODE 0 text22 dist/default/production\Lab_3.X.production.o
 __ptext23 36E0 0 CODE 0 text23 dist/default/production\Lab_3.X.production.o
 __ptext24 37D8 0 CODE 0 text24 dist/default/production\Lab_3.X.production.o
 __ptext25 193E 0 CODE 0 text25 dist/default/production\Lab_3.X.production.o
-__ptext26 F92 0 CODE 0 text26 dist/default/production\Lab_3.X.production.o
+__ptext26 F96 0 CODE 0 text26 dist/default/production\Lab_3.X.production.o
 __ptext27 21A6 0 CODE 0 text27 dist/default/production\Lab_3.X.production.o
 __ptext28 1104 0 CODE 0 text28 dist/default/production\Lab_3.X.production.o
 __ptext29 2032 0 CODE 0 text29 dist/default/production\Lab_3.X.production.o
@@ -1267,7 +1267,7 @@ __ptext36 3440 0 CODE 0 text36 dist/default/production\Lab_3.X.production.o
 __ptext37 3D70 0 CODE 0 text37 dist/default/production\Lab_3.X.production.o
 __ptext38 3860 0 CODE 0 text38 dist/default/production\Lab_3.X.production.o
 __ptext39 2320 0 CODE 0 text39 dist/default/production\Lab_3.X.production.o
-_Lcd_Clear FE0 0 CODE 0 text8 dist/default/production\Lab_3.X.production.o
+_Lcd_Clear FE4 0 CODE 0 text8 dist/default/production\Lab_3.X.production.o
 __size_of_Lcd_Write_Char 0 0 ABS 0 - dist/default/production\Lab_3.X.production.o
 ___awdiv 3BCA 0 CODE 0 text20 dist/default/production\Lab_3.X.production.o
 ___awmod 3A4C 0 CODE 0 text19 dist/default/production\Lab_3.X.production.o
@@ -1353,7 +1353,7 @@ __ptext4 39A4 0 CODE 0 text4 dist/default/production\Lab_3.X.production.o
 __ptext5 350A 0 CODE 0 text5 dist/default/production\Lab_3.X.production.o
 __ptext6 3694 0 CODE 0 text6 dist/default/production\Lab_3.X.production.o
 __ptext7 3C9C 0 CODE 0 text7 dist/default/production\Lab_3.X.production.o
-__ptext8 FE0 0 CODE 0 text8 dist/default/production\Lab_3.X.production.o
+__ptext8 FE4 0 CODE 0 text8 dist/default/production\Lab_3.X.production.o
 __ptext9 357A 0 CODE 0 text9 dist/default/production\Lab_3.X.production.o
 ?__Umul8_16 70 0 COMMON 1 cstackCOMMON dist/default/production\Lab_3.X.production.o
 _sprintf 5C 0 CODE 0 text17 dist/default/production\Lab_3.X.production.o
@@ -1492,7 +1492,7 @@ maintext 0 1F5A 3EB4 A6 2
 cstackCOMMON 1 70 70 E 1
 cstackBANK0 1 20 20 4E 1
 cstackBANK1 1 A0 A0 31 1
-intentry 0 4 8 7F9 2
+intentry 0 4 8 7FB 2
 reset_vec 0 0 0 3 2
 bssBANK3 1 190 190 50 1
 strings 0 1800 3000 B1 2

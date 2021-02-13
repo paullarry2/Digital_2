@@ -68,7 +68,7 @@ ___flge@ff1 70 0 COMMON 1
 ?_sprintf A0 0 BANK1 1
 ___xxtofl 1019 0 CODE 0
 ___fleq@ff1 70 0 COMMON 1
-__end_of_ISR 7C9 0 CODE 0
+__end_of_ISR 7CB 0 CODE 0
 __Hfunctab 0 0 ENTRY 0
 __Lfunctab 0 0 ENTRY 0
 ___flge@ff2 74 0 COMMON 1
@@ -124,7 +124,7 @@ __end_of___flge 1F5A 0 CODE 0
 __end_of___awmod 1D7F 0 CODE 0
 __Hcode 0 0 ABS 0
 __Lcode 0 0 ABS 0
-_Lcd_Clear 7F0 0 CODE 0
+_Lcd_Clear 7F2 0 CODE 0
 i1_Lcd_Write_Char 1003 0 CODE 0
 _scale$1045 4C 0 BANK0 1
 ___flge 1EB8 0 CODE 0
@@ -154,7 +154,7 @@ ___wmul@multiplier 70 0 COMMON 1
 ?___xxtofl 70 0 COMMON 1
 ___flmul@sign 31 0 BANK0 1
 end_of_initialization 2A 0 CODE 0
-__Umul8_16 7C9 0 CODE 0
+__Umul8_16 7CB 0 CODE 0
 ___fldiv@sign 4F 0 BANK0 1
 ___awdiv@sign 21 0 BANK0 1
 __size_of__div_to_l_ 0 0 ABS 0
@@ -201,7 +201,7 @@ __ptext7 1E4E 0 CODE 0
 Lcd_Set_Cursor@a 1DA 0 BANK3 1
 __HcstackBANK1 0 0 ABS 0
 __LcstackBANK1 0 0 ABS 0
-__ptext8 7F0 0 CODE 0
+__ptext8 7F2 0 CODE 0
 sprintf@val B1 0 BANK1 1
 __ptext9 1ABD 0 CODE 0
 __pcstackBANK1 A0 0 BANK1 1
@@ -273,7 +273,7 @@ ___fltol@exp1 5B 0 BANK0 1
 __end_of_isdigit 1A3D 0 CODE 0
 ?__Umul8_16 70 0 COMMON 1
 __end_of_sprintf 686 0 CODE 0
-__end_of_Lcd_Clear 7FD 0 CODE 0
+__end_of_Lcd_Clear 7FF 0 CODE 0
 clear_ram0 1A18 0 CODE 0
 sprintf@tmpval B7 0 BANK1 1
 __end_ofi1_Lcd_Set_Cursor 1B25 0 CODE 0
@@ -314,7 +314,7 @@ __ptext25 C9F 0 CODE 0
 __ptext16 800 0 CODE 0
 __ptext35 1578 0 CODE 0
 __HbssBANK3 0 0 ABS 0
-__ptext26 7C9 0 CODE 0
+__ptext26 7CB 0 CODE 0
 __LbssBANK3 0 0 ABS 0
 ___llmod@divisor 70 0 COMMON 1
 __ptext17 2E 0 CODE 0
@@ -376,7 +376,7 @@ __tdiv_to_l_@f2 74 0 COMMON 1
 intlevel5 0 0 ENTRY 0
 i1_Lcd_Write_String 1BAA 0 CODE 0
 __size_of_Lcd_Port 0 0 ABS 0
-__end_of__Umul8_16 7F0 0 CODE 0
+__end_of__Umul8_16 7F2 0 CODE 0
 _val_pot1 D0 0 BANK1 1
 _val_pot2 CF 0 BANK1 1
 __size_of___lwmod 0 0 ABS 0
@@ -435,7 +435,7 @@ isdigit@c 71 0 COMMON 1
 ___awdiv@dividend 79 0 COMMON 1
 %segments
 reset_vec 0 5 CODE 0 0
-intentry 8 FF9 CODE 8 0
+intentry 8 FFD CODE 8 0
 cstackCOMMON 70 7D COMMON 70 1
 cstackBANK0 20 6D BANK0 20 1
 cstackBANK1 A0 D0 BANK1 A0 1
@@ -480,7 +480,7 @@ text10 3420 342F CODE 3420 0
 text16 1000 100B CODE 1000 0
 %locals
 dist/default/production\Lab_3.X.production.o
-C:\Users\Universidad\AppData\Local\Temp\s6uk.s
+C:\Users\Universidad\AppData\Local\Temp\sc08.s
 1096 19 0 CODE 0
 1099 19 0 CODE 0
 1143 19 0 CODE 0
@@ -605,10 +605,10 @@ lcd.c
 50 1EAB 0 CODE 0
 51 1EB1 0 CODE 0
 52 1EB7 0 CODE 0
-20 7F0 0 CODE 0
-21 7F0 0 CODE 0
-22 7F6 0 CODE 0
-23 7FC 0 CODE 0
+20 7F2 0 CODE 0
+21 7F2 0 CODE 0
+22 7F8 0 CODE 0
+23 7FE 0 CODE 0
 12 1ABD 0 CODE 0
 13 1AC0 0 CODE 0
 14 1AC3 0 CODE 0
@@ -637,9 +637,9 @@ main.c
 134 739 0 CODE 0
 135 73B 0 CODE 0
 136 798 0 CODE 0
-137 7A0 0 CODE 0
-141 7B5 0 CODE 0
-142 7B8 0 CODE 0
+137 7A2 0 CODE 0
+141 7B7 0 CODE 0
+142 7BA 0 CODE 0
 118 4 0 CODE 0
 lcd.c
 62 1BAA 0 CODE 0
@@ -959,17 +959,17 @@ C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcmul.c
 203 FF7 0 CODE 0
 205 FFF 0 CODE 0
 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
-4 7C9 0 CODE 0
-5 7CA 0 CODE 0
-6 7CC 0 CODE 0
-51 7D3 0 CODE 0
-52 7D7 0 CODE 0
-53 7DD 0 CODE 0
-54 7DD 0 CODE 0
-55 7E4 0 CODE 0
-56 7E6 0 CODE 0
-59 7EB 0 CODE 0
-60 7EF 0 CODE 0
+4 7CB 0 CODE 0
+5 7CC 0 CODE 0
+6 7CE 0 CODE 0
+51 7D5 0 CODE 0
+52 7D9 0 CODE 0
+53 7DF 0 CODE 0
+54 7DF 0 CODE 0
+55 7E6 0 CODE 0
+56 7E8 0 CODE 0
+59 7ED 0 CODE 0
+60 7F1 0 CODE 0
 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\ftdivl.c
 60 10D3 0 CODE 0
 66 10D3 0 CODE 0

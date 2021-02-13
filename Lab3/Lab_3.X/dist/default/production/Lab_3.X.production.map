@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.31\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\Lab_3.X.production.sym \
   --cmf=dist/default/production\Lab_3.X.production.cmf -z -Q16F887 \
-  -oC:\Users\Universidad\AppData\Local\Temp\s6uk.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\Universidad\AppData\Local\Temp\sc08.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/Lab_3.X.production.map -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK -ACODE=00h-07FFhx4 \
   -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 \
@@ -18,7 +18,7 @@ Linker command line:
   -AEEDATA=00h-0FFh/02100h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE -pcinit=CODE \
-  -pfunctab=ENTRY -k C:\Users\Universidad\AppData\Local\Temp\s6uk.o \
+  -pfunctab=ENTRY -k C:\Users\Universidad\AppData\Local\Temp\sc08.o \
   dist/default/production\Lab_3.X.production.o 
 
 Object code version is 3.11
@@ -28,7 +28,7 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Universidad\AppData\Local\Temp\s6uk.o
+C:\Users\Universidad\AppData\Local\Temp\sc08.o
                 end_init                             16       16        3        8       0
                 reset_vec                             0        0        3        0       0
                 config                             2007     2007        2        0       4
@@ -49,7 +49,7 @@ dist/default/production\Lab_3.X.production.o
                 text29                             1019     1019       BA     2032       0
                 text28                              882      882       BE     1104       0
                 text27                             10D3     10D3       BD     21A6       0
-                text26                              7C9      7C9       27        8       0
+                text26                              7CB      7CB       27        8       0
                 text25                              C9F      C9F      361     193E       0
                 text24                             1BEC     1BEC       44     37D8       0
                 text23                             1B70     1B70       3A     36E0       0
@@ -64,10 +64,10 @@ dist/default/production\Lab_3.X.production.o
                 text14                             1B01     1B01       24     3602       0
                 text13                             1003     1003       16     2006       0
                 text12                             1BAA     1BAA       42     3754       0
-                text11                              686      686      143        8       0
+                text11                              686      686      145        8       0
                 text10                             1A10     1A10        8     3420       0
                 text9                              1ABD     1ABD       20     357A       0
-                text8                               7F0      7F0        D        8       0
+                text8                               7F2      7F2        D        8       0
                 text7                              1E4E     1E4E       6A     3C9C       0
                 text6                              1B4A     1B4A       26     3694       0
                 text5                              1A85     1A85       1C     350A       0
@@ -106,7 +106,7 @@ TOTAL           Name                               Link     Load   Length     Sp
                 text29                             1019     1019       BA         0
                 text28                              882      882       BE         0
                 text27                             10D3     10D3       BD         0
-                text26                              7C9      7C9       27         0
+                text26                              7CB      7CB       27         0
                 text25                              C9F      C9F      361         0
                 text24                             1BEC     1BEC       44         0
                 text23                             1B70     1B70       3A         0
@@ -121,10 +121,10 @@ TOTAL           Name                               Link     Load   Length     Sp
                 text14                             1B01     1B01       24         0
                 text13                             1003     1003       16         0
                 text12                             1BAA     1BAA       42         0
-                text11                              686      686      143         0
+                text11                              686      686      145         0
                 text10                             1A10     1A10        8         0
                 text9                              1ABD     1ABD       20         0
-                text8                               7F0      7F0        D         0
+                text8                               7F2      7F2        D         0
                 text7                              1E4E     1E4E       6A         0
                 text6                              1B4A     1B4A       26         0
                 text5                              1A85     1A85       1C         0
@@ -185,7 +185,7 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
                 reset_vec                      000000  000003  000003         0       0  CODE        2
-                intentry                       000004  0007F9  0007FD         8       0  CODE        2
+                intentry                       000004  0007FB  0007FF         8       0  CODE        2
                 cstackBANK0                    000020  00004E  00006E        20       1  BANK0       1
                 cstackCOMMON                   000070  00000E  00007E        70       1  COMMON      1
                 cstackBANK1                    0000A0  000031  0000D1        A0       1  BANK1       1
@@ -238,16 +238,16 @@ UNUSED ADDRESS RANGES
         BANK2            0110-016F             60           1
         BANK3            01E0-01EF             10           1
         CODE             0003-0003              1           2
-                         07FD-07FF              3
+                         07FF-07FF              1
                          1000-1002              3
                          18B1-1A0F            15F
         CONST            0003-0003              1           2
-                         07FD-07FF              3
+                         07FF-07FF              1
                          1000-1002              3
                          18B1-1A0F            100
         EEDATA           2100-21FF            100           2
         ENTRY            0003-0003              1           2
-                         07FD-07FF              3
+                         07FF-07FF              1
                          1000-1002              3
                          18B1-1A0F            100
         IDLOC            2000-2003              4           2
@@ -261,11 +261,11 @@ UNUSED ADDRESS RANGES
         SFR3             0180-018F             10           1
         STACK            0110-016F             60           1
         STRCODE          0003-0003              1           2
-                         07FD-07FF              3
+                         07FF-07FF              1
                          1000-1002              3
                          18B1-1A0F            15F
         STRING           0003-0003              1           2
-                         07FD-07FF              3
+                         07FF-07FF              1
                          1000-1002              3
                          18B1-1A0F            100
 
@@ -307,7 +307,7 @@ _ANSELH                      (abs)        0189
 _ANSELbits                   (abs)        0188
 _INTCONbits                  (abs)        000B
 _ISR                         text11       0686
-_Lcd_Clear                   text8        07F0
+_Lcd_Clear                   text8        07F2
 _Lcd_Cmd                     text9        1ABD
 _Lcd_Init                    text7        1E4E
 _Lcd_Port                    text10       1A10
@@ -406,7 +406,7 @@ __S0                         (abs)        2000
 __S1                         (abs)        01E0
 __S2                         (abs)        0000
 __S3                         (abs)        0000
-__Umul8_16                   text26       07C9
+__Umul8_16                   text26       07CB
 __Umul8_16@multiplicand      cstackCOMMON 0070
 __Umul8_16@multiplier        cstackCOMMON 0078
 __Umul8_16@product           cstackCOMMON 0074
@@ -500,15 +500,15 @@ __div_to_l_@exp1             cstackBANK0  0025
 __div_to_l_@f1               cstackCOMMON 0070
 __div_to_l_@f2               cstackCOMMON 0074
 __div_to_l_@quot             cstackBANK0  0020
-__end_of_ISR                 text11       07C9
-__end_of_Lcd_Clear           text8        07FD
+__end_of_ISR                 text11       07CB
+__end_of_Lcd_Clear           text8        07FF
 __end_of_Lcd_Cmd             text9        1ADD
 __end_of_Lcd_Init            text7        1EB8
 __end_of_Lcd_Port            text10       1A18
 __end_of_Lcd_Set_Cursor      text6        1B70
 __end_of_Lcd_Write_Char      text5        1AA1
 __end_of_Lcd_Write_String    text4        1D26
-__end_of__Umul8_16           text26       07F0
+__end_of__Umul8_16           text26       07F2
 __end_of___awdiv             text20       1E4E
 __end_of___awmod             text19       1D7F
 __end_of___fladd             text35       1800
@@ -575,7 +575,7 @@ __ptext22                    text22       136D
 __ptext23                    text23       1B70
 __ptext24                    text24       1BEC
 __ptext25                    text25       0C9F
-__ptext26                    text26       07C9
+__ptext26                    text26       07CB
 __ptext27                    text27       10D3
 __ptext28                    text28       0882
 __ptext29                    text29       1019
@@ -594,7 +594,7 @@ __ptext4                     text4        1CD2
 __ptext5                     text5        1A85
 __ptext6                     text6        1B4A
 __ptext7                     text7        1E4E
-__ptext8                     text8        07F0
+__ptext8                     text8        07F2
 __ptext9                     text9        1ABD
 __size_of_ISR                (abs)        0000
 __size_of_Lcd_Clear          (abs)        0000
@@ -2032,7 +2032,7 @@ C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcdiv.c
 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcdiv.c estimated size: 477
 
 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
-		__Umul8_16     		CODE           	07C9	0000	39
+		__Umul8_16     		CODE           	07CB	0000	39
 
 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c estimated size: 39
 
@@ -2135,15 +2135,15 @@ lcd.c
 		_Lcd_Write_Char		CODE           	1A85	0000	28
 		_Lcd_Cmd       		CODE           	1ABD	0000	32
 		_Lcd_Set_Cursor		CODE           	1B4A	0000	38
-		_Lcd_Clear     		CODE           	07F0	0000	13
+		_Lcd_Clear     		CODE           	07F2	0000	13
 		_Lcd_Port      		CODE           	1A10	0000	8
 
 lcd.c estimated size: 309
 
 main.c
-		_ISR           		CODE           	0686	0000	323
+		_ISR           		CODE           	0686	0000	325
 		_main          		CODE           	1F5A	0000	166
 		_config        		CODE           	1AA1	0000	28
 
-main.c estimated size: 517
+main.c estimated size: 519
 

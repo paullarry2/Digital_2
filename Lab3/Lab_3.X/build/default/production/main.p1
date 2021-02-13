@@ -446,8 +446,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 64:         Lcd_Write_String("S1:");
 [e ( _Lcd_Write_String (1 :s 1C ]
 "65
-[; ;main.c: 65:         Lcd_Set_Cursor(1,8);
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 8 `i `uc ]
+[; ;main.c: 65:         Lcd_Set_Cursor(1,7);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 7 `i `uc ]
 "66
 [; ;main.c: 66:         Lcd_Write_String("S2:");
 [e ( _Lcd_Write_String (1 :s 2C ]
@@ -634,8 +634,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 135:             voltaje = (val_pot2 * 5.0) / 255;
 [e = _voltaje -> / * -> -> _val_pot2 `i `d .5.0 -> -> 255 `i `d `f ]
 "136
-[; ;main.c: 136:             Lcd_Set_Cursor(2, 1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+[; ;main.c: 136:             Lcd_Set_Cursor(2, 7);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 7 `i `uc ]
 "137
 [; ;main.c: 137:             sprintf(buffer, "%.2f", voltaje);
 [e ( _sprintf (1 , (. , &U _buffer :s 5C -> _voltaje `d ]

@@ -62,7 +62,7 @@ void main(void) {
     while (1) {
         Lcd_Set_Cursor(1,1);
         Lcd_Write_String("S1:");
-        Lcd_Set_Cursor(1,8);
+        Lcd_Set_Cursor(1,7);
         Lcd_Write_String("S2:");
         Lcd_Set_Cursor(1,13);
         Lcd_Write_String("S3:");
@@ -133,7 +133,7 @@ void __interrupt() ISR(void) {//Interrupciones
             adc_fin = 0; //Apagar bandera de copiando conversion
             pot = 0;
             voltaje = (val_pot2 * 5.0) / 255;
-            Lcd_Set_Cursor(2, 1);
+            Lcd_Set_Cursor(2, 7);
             sprintf(buffer, "%.2f", voltaje);
             Lcd_Write_String(buffer);
         }
