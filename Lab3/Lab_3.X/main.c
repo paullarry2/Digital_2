@@ -28,16 +28,17 @@
 #include <xc.h>
 #include <stdint.h>
 #include "Adc_int_.h"
+#include "lcd.h"
 
 #define _XTAL_FREQ (8000000)
 
 //******************************************************************************
 //Variables
 //******************************************************************************
-uint8_t pot;
+int pot;
 uint8_t val_pot1;
 uint8_t val_pot2;
-uint8_t adc_fin;
+int adc_fin = 0;
 //******************************************************************************
 //Prototipo de funciones
 //******************************************************************************
@@ -49,22 +50,33 @@ void config(void);
 
 void main(void) {
     config();
+    confADC();
     adc_fin = 0;
+    Lcd_Init();
+    Lcd_Clear();
     while (1) {
-        if (adc_fin){
-            adc_fin = 1;//Bandera para comprobar si ya se copio la conversion.
-        if (pot == 0) {
-            conf_ch(0); //COnfigura canal 0 RA0
-            __delay_ms(10); // Acquisition time
-            ADCON0bits.GO = 1; // Enciende la conversion
-             
+        Lcd_Set_Cursor(1,1);
+        Lcd_Write_String("S1:");
+        Lcd_Set_Cursor(1,8);
+        Lcd_Write_String("S2:");
+        Lcd_Set_Cursor(1,13);
+        Lcd_Write_String("S3:");
+        
+        if (adc_fin == 0) {
+            adc_fin = 1; //Bandera para comprobar si ya se copio la conversion.
+            if (pot == 0) {
+                conf_ch(0); //COnfigura canal 0 RA0
+                __delay_ms(10); // Acquisition time
+                ADCON0bits.GO = 1; // Enciende la conversion
+
+            }
+            if (pot == 1) {
+                conf_ch(1); //Configura canal 1 RA1
+                __delay_ms(10); // Acquisition time
+                ADCON0bits.GO = 1; // Enciende la conversion
+            }
         }
-        if (pot == 1) {
-            conf_ch(1); //Configura canal 1 RA1
-            __delay_ms(10); // Acquisition time
-            ADCON0bits.GO = 1; // Enciende la conversion
-        }
-        }
+        
     }
 }
 //******************************************************************************
@@ -90,7 +102,7 @@ void config(void) {
     PORTB = 0;
     PORTC = 0;
     PORTE = 0;
-    pot=0;
+    pot = 0;
 
 }
 
@@ -100,9 +112,17 @@ void config(void) {
 
 void __interrupt() ISR(void) {//Interrupciones
 
-    if (PIR1bits.ADIF == 1) { //Chequea la bandera del ADC
-        PORTC = ADRESH; //Copia el valor de la conversion al puerto C
-        adc_fin = 0; //Apagar bandera de copiando conversion
-        PIR1bits.ADIF = 0; //Apagar bandera de conversion
+    if (PIR1bits.ADIF == 1) {
+        if (pot == 0) {//Chequea la bandera del ADC
+            val_pot1 = ADRESH; //Copia el valor de la conversion al puerto C
+            adc_fin = 0; //Apagar bandera de copiando 
+            pot = 1;
+        }
+        else if (pot == 1) {
+            val_pot2 = ADRESH; //Copia el valor de la conversion al puerto C
+            adc_fin = 0; //Apagar bandera de copiando conversion
+            pot = 0;
+        }
     }
+    PIR1bits.ADIF = 0; //Apagar bandera de conversion
 }

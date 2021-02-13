@@ -3,6 +3,10 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 0 ]
+"3 C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\Adc_int_.c
+[v _confADC confADC `(v  1 e 1 0 ]
+"18
+[v _conf_ch conf_ch `(v  1 e 1 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
@@ -11,11 +15,25 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"50 C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\main.c
+"8 C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\lcd.c
+[v _Lcd_Port Lcd_Port `(v  1 e 1 0 ]
+"12
+[v _Lcd_Cmd Lcd_Cmd `(v  1 e 1 0 ]
+"20
+[v _Lcd_Clear Lcd_Clear `(v  1 e 1 0 ]
+"25
+[v _Lcd_Set_Cursor Lcd_Set_Cursor `(v  1 e 1 0 ]
+"36
+[v _Lcd_Init Lcd_Init `(v  1 e 1 0 ]
+"54
+[v _Lcd_Write_Char Lcd_Write_Char `(v  1 e 1 0 ]
+"62
+[v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
+"51 C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"74
+"86
 [v _config config `(v  1 e 1 0 ]
-"101
+"113
 [v _ISR ISR `II(v  1 e 1 0 ]
 "228 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
@@ -25,7 +43,7 @@
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
 "414
 [v _PORTE PORTE `VEuc  1 e 1 @9 ]
-[s S83 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S106 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -35,14 +53,14 @@
 `uc 1 GIE 1 0 :1:7 
 ]
 "482
-[s S92 . 1 `uc 1 . 1 0 :2:0 
+[s S115 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 TMR0IE 1 0 :1:5 
 ]
-[u S97 . 1 `S83 1 . 1 0 `S92 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES97  1 e 1 @11 ]
-[s S168 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S120 . 1 `S106 1 . 1 0 `S115 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES120  1 e 1 @11 ]
+[s S191 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -51,17 +69,17 @@
 `uc 1 ADIF 1 0 :1:6 
 ]
 "553
-[u S176 . 1 `S168 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES176  1 e 1 @12 ]
+[u S199 . 1 `S191 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES199  1 e 1 @12 ]
 "1238
 [v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
-[s S37 . 1 `uc 1 ADON 1 0 :1:0 
+[s S60 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
 `uc 1 ADCS 1 0 :2:6 
 ]
 "1276
-[s S42 . 1 `uc 1 . 1 0 :1:0 
+[s S65 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -70,17 +88,17 @@
 `uc 1 ADCS0 1 0 :1:6 
 `uc 1 ADCS1 1 0 :1:7 
 ]
-[s S51 . 1 `uc 1 . 1 0 :1:0 
+[s S74 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S54 . 1 `uc 1 . 1 0 :1:0 
+[s S77 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 ]
-[u S57 . 1 `S37 1 . 1 0 `S42 1 . 1 0 `S51 1 . 1 0 `S54 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES57  1 e 1 @31 ]
+[u S80 . 1 `S60 1 . 1 0 `S65 1 . 1 0 `S74 1 . 1 0 `S77 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES80  1 e 1 @31 ]
 "1416
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
-[s S143 . 1 `uc 1 TRISA0 1 0 :1:0 
+[s S166 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -90,8 +108,8 @@
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "1433
-[u S152 . 1 `S143 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES152  1 e 1 @133 ]
+[u S175 . 1 `S166 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES175  1 e 1 @133 ]
 "1478
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
 "1540
@@ -100,9 +118,22 @@
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
 "1664
 [v _TRISE TRISE `VEuc  1 e 1 @137 ]
+[s S295 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 CCP1IE 1 0 :1:2 
+`uc 1 SSPIE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+]
+"1718
+[u S303 . 1 `S295 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES303  1 e 1 @140 ]
+"2977
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @159 ]
 "3387
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
-[s S117 . 1 `uc 1 ANS0 1 0 :1:0 
+[s S140 . 1 `uc 1 ANS0 1 0 :1:0 
 `uc 1 ANS1 1 0 :1:1 
 `uc 1 ANS2 1 0 :1:2 
 `uc 1 ANS3 1 0 :1:3 
@@ -112,26 +143,104 @@
 `uc 1 ANS7 1 0 :1:7 
 ]
 "3404
-[u S126 . 1 `S117 1 . 1 0 ]
-[v _ANSELbits ANSELbits `VES126  1 e 1 @392 ]
+[u S149 . 1 `S140 1 . 1 0 ]
+[v _ANSELbits ANSELbits `VES149  1 e 1 @392 ]
 "3449
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
-"37 C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\main.c
-[v _pot pot `uc  1 e 1 0 ]
+"4205
+[v _RE0 RE0 `VEb  1 e 0 @72 ]
+"4208
+[v _RE1 RE1 `VEb  1 e 0 @73 ]
+"38 C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\main.c
+[v _pot pot `i  1 e 2 0 ]
+"39
+[v _val_pot1 val_pot1 `uc  1 e 1 0 ]
 "40
-[v _adc_fin adc_fin `uc  1 e 1 0 ]
-"50
+[v _val_pot2 val_pot2 `uc  1 e 1 0 ]
+"41
+[v _adc_fin adc_fin `i  1 e 2 0 ]
+"51
 [v _main main `(v  1 e 1 0 ]
 {
-"69
+"81
 } 0
-"74
+"86
 [v _config config `(v  1 e 1 0 ]
 {
-"95
+"107
 } 0
-"101
+"18 C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\Adc_int_.c
+[v _conf_ch conf_ch `(v  1 e 1 0 ]
+{
+[v conf_ch@sel sel `i  1 p 2 3 ]
+"26
+} 0
+"3
+[v _confADC confADC `(v  1 e 1 0 ]
+{
+"17
+} 0
+"62 C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\lcd.c
+[v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
+{
+[v Lcd_Write_String@a a `*.24uc  1 a 1 wreg ]
+"63
+[v Lcd_Write_String@i i `i  1 a 2 0 ]
+"62
+[v Lcd_Write_String@a a `*.24uc  1 a 1 wreg ]
+"64
+[v Lcd_Write_String@a a `*.24uc  1 a 1 2 ]
+"66
+} 0
+"54
+[v _Lcd_Write_Char Lcd_Write_Char `(v  1 e 1 0 ]
+{
+[v Lcd_Write_Char@a a `uc  1 a 1 wreg ]
+[v Lcd_Write_Char@a a `uc  1 a 1 wreg ]
+[v Lcd_Write_Char@a a `uc  1 a 1 5 ]
+"60
+} 0
+"25
+[v _Lcd_Set_Cursor Lcd_Set_Cursor `(v  1 e 1 0 ]
+{
+[v Lcd_Set_Cursor@a a `uc  1 a 1 wreg ]
+"26
+[v Lcd_Set_Cursor@temp temp `uc  1 a 1 2 ]
+"25
+[v Lcd_Set_Cursor@a a `uc  1 a 1 wreg ]
+[v Lcd_Set_Cursor@b b `uc  1 p 1 7 ]
+"27
+[v Lcd_Set_Cursor@a a `uc  1 a 1 1 ]
+"34
+} 0
+"36
+[v _Lcd_Init Lcd_Init `(v  1 e 1 0 ]
+{
+"52
+} 0
+"20
+[v _Lcd_Clear Lcd_Clear `(v  1 e 1 0 ]
+{
+"23
+} 0
+"12
+[v _Lcd_Cmd Lcd_Cmd `(v  1 e 1 0 ]
+{
+[v Lcd_Cmd@a a `uc  1 a 1 wreg ]
+[v Lcd_Cmd@a a `uc  1 a 1 wreg ]
+[v Lcd_Cmd@a a `uc  1 a 1 6 ]
+"18
+} 0
+"8
+[v _Lcd_Port Lcd_Port `(v  1 e 1 0 ]
+{
+[v Lcd_Port@a a `uc  1 a 1 wreg ]
+[v Lcd_Port@a a `uc  1 a 1 wreg ]
+[v Lcd_Port@a a `uc  1 a 1 3 ]
+"10
+} 0
+"113 C:\Users\Universidad\Documents\Digital2\Lab3\Lab_3.X\main.c
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"108
+"128
 } 0

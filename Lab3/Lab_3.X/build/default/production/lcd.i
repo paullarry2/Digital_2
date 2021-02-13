@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "lcd.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,24 +6,9 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 13 "main.c"
-#pragma config FOSC = INTRC_NOCLKOUT
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = ON
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config LVP = OFF
-
-
-
-#pragma config WRT = OFF
-
-
+# 1 "lcd.c" 2
+# 1 "./lcd.h" 1
+# 13 "./lcd.h"
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2504,7 +2489,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 28 "main.c" 2
+# 13 "./lcd.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
@@ -2639,23 +2624,6 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 29 "main.c" 2
-
-# 1 "./Adc_int_.h" 1
-# 14 "./Adc_int_.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
-# 14 "./Adc_int_.h" 2
-
-
-
-
-void confADC(void);
-void conf_ch(int sel);
-# 30 "main.c" 2
-
-# 1 "./lcd.h" 1
-# 14 "./lcd.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
 # 14 "./lcd.h" 2
 
 
@@ -2670,7 +2638,7 @@ void Lcd_Write_Char(char a);
 void Lcd_Write_String(char *a);
 void Lcd_Shift_Right();
 void Lcd_Shift_Left();
-# 31 "main.c" 2
+# 1 "lcd.c" 2
 
 
 
@@ -2678,94 +2646,72 @@ void Lcd_Shift_Left();
 
 
 
-int pot;
-uint8_t val_pot1;
-uint8_t val_pot2;
-int adc_fin = 0;
+void Lcd_Port(char a) {
+    PORTD = a;
+}
 
+void Lcd_Cmd(char a) {
+    RE0 = 0;
+    Lcd_Port(a);
+    RE1 = 1;
+    _delay((unsigned long)((4)*(8000000/4000.0)));
+    RE1 = 0;
+}
 
+void Lcd_Clear() {
+    Lcd_Cmd(0);
+    Lcd_Cmd(1);
+}
 
-void config(void);
-
-
-
-
-
-void main(void) {
-    config();
-    confADC();
-    adc_fin = 0;
-    Lcd_Init();
-    Lcd_Clear();
-    while (1) {
-        Lcd_Set_Cursor(1,1);
-        Lcd_Write_String("S1:");
-        Lcd_Set_Cursor(1,8);
-        Lcd_Write_String("S2:");
-        Lcd_Set_Cursor(1,13);
-        Lcd_Write_String("S3:");
-
-        if (adc_fin == 0) {
-            adc_fin = 1;
-            if (pot == 0) {
-                conf_ch(0);
-                _delay((unsigned long)((10)*((8000000)/4000.0)));
-                ADCON0bits.GO = 1;
-
-            }
-            if (pot == 1) {
-                conf_ch(1);
-                _delay((unsigned long)((10)*((8000000)/4000.0)));
-                ADCON0bits.GO = 1;
-            }
-        }
-
+void Lcd_Set_Cursor(char a, char b) {
+    char temp;
+    if (a == 1) {
+        temp = 0x80 + b - 1;
+        Lcd_Cmd(temp);
+    } else if (a == 2) {
+        temp = 0xC0 + b - 1;
+        Lcd_Cmd(temp);
     }
 }
 
+void Lcd_Init() {
+    _delay((unsigned long)((200)*(8000000/4000.0)));
+    Lcd_Port(0x00);
+    _delay((unsigned long)((25)*(8000000/4000.0)));
+    Lcd_Cmd(0x30);
+    _delay((unsigned long)((7)*(8000000/4000.0)));
+    Lcd_Cmd(0x30);
+    _delay((unsigned long)((200)*(8000000/4000000.0)));
+    Lcd_Cmd(0x30);
+    _delay((unsigned long)((200)*(8000000/4000000.0)));
 
-
-
-void config(void) {
-
-    INTCONbits.GIE = 1;
-    INTCONbits.PEIE = 1;
-    ANSEL = 0;
-    ANSELH = 0;
-    ANSELbits.ANS0 = 1;
-    ANSELbits.ANS1 = 1;
-    TRISC = 0x00;
-    TRISB = 0x00;
-    TRISD = 0x00;
-    TRISE = 0x00;
-    TRISA = 0;
-    TRISAbits.TRISA0 = 1;
-    TRISAbits.TRISA1 = 1;
-    PORTD = 0;
-    PORTB = 0;
-    PORTC = 0;
-    PORTE = 0;
-    pot = 0;
-
+    Lcd_Cmd(0x38);
+    Lcd_Cmd(0x10);
+    Lcd_Cmd(0x01);
+    Lcd_Cmd(0x06);
+    Lcd_Cmd(0x0C);
 }
 
+void Lcd_Write_Char(char a) {
+    RE0 = 1;
+    Lcd_Port(a);
+    RE1 = 1;
+    _delay((unsigned long)((40)*(8000000/4000000.0)));
+    RE1 = 0;
+}
 
+void Lcd_Write_String(char *a) {
+    int i;
+    for (i = 0; a[i] != '\0'; i++)
+        Lcd_Write_Char(a[i]);
+}
 
+void Lcd_Shift_Right() {
+    Lcd_Cmd(0x01);
+    Lcd_Cmd(0x0C);
+}
 
-
-void __attribute__((picinterrupt(("")))) ISR(void) {
-
-    if (PIR1bits.ADIF == 1) {
-        if (pot == 0) {
-            val_pot1 = ADRESH;
-            adc_fin = 0;
-            pot = 1;
-        }
-        else if (pot == 1) {
-            val_pot2 = ADRESH;
-            adc_fin = 0;
-            pot = 0;
-        }
-    }
-    PIR1bits.ADIF = 0;
+void Lcd_Shift_Left() {
+    Lcd_Cmd(0x01);
+    Lcd_Cmd(0x08);
 }
