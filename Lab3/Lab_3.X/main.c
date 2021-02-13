@@ -27,6 +27,8 @@
 
 #include <xc.h>
 #include <stdint.h>
+#include <stdlib.h>
+#include <stdio.h>
 #include "Adc_int_.h"
 #include "lcd.h"
 
@@ -39,6 +41,9 @@ int pot;
 uint8_t val_pot1;
 uint8_t val_pot2;
 int adc_fin = 0;
+char buffer[64];
+float voltaje;
+
 //******************************************************************************
 //Prototipo de funciones
 //******************************************************************************
@@ -117,11 +122,20 @@ void __interrupt() ISR(void) {//Interrupciones
             val_pot1 = ADRESH; //Copia el valor de la conversion al puerto C
             adc_fin = 0; //Apagar bandera de copiando 
             pot = 1;
+            voltaje = (val_pot1 * 5.0) / 255;
+            Lcd_Set_Cursor(2, 1);
+            sprintf(buffer, "%.2f", voltaje);
+            Lcd_Write_String(buffer);
+            
         }
         else if (pot == 1) {
             val_pot2 = ADRESH; //Copia el valor de la conversion al puerto C
             adc_fin = 0; //Apagar bandera de copiando conversion
             pot = 0;
+            voltaje = (val_pot2 * 5.0) / 255;
+            Lcd_Set_Cursor(2, 1);
+            sprintf(buffer, "%.2f", voltaje);
+            Lcd_Write_String(buffer);
         }
     }
     PIR1bits.ADIF = 0; //Apagar bandera de conversion
