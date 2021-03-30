@@ -42,11 +42,6 @@ const int J2_8 = 37;
 int J2_Contador = 0;
 
 // Estados
-int ledState = HIGH;         // the current state of the output pin
-int ledState2 = HIGH;
-int buttonState;             // the current reading from the input pin
-int buttonState2;
-int pressState = LOW;
 int semaforoState = LOW;
 int J1_win = LOW;
 int J2_win = LOW;
@@ -170,6 +165,8 @@ void reseteo(){
     digitalWrite(J2_8, LOW);
     J1_Contador = 0;
     J2_Contador = 0;
+    J1_win = 0;
+    J2_win = 0;
     digitalWrite(rojo, LOW);
     digitalWrite(verde, LOW); //Naranja
     digitalWrite(azul, LOW);
