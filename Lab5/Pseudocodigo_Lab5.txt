@@ -1,0 +1,21 @@
+Pseudo codigo 
+
+menu()
+while hasta que bandera de opciones ya esté encendida{
+
+estructura para opciones
+imprimir opciones
+esperar ingreso de datos
+encender bandera opciones
+}
+
+if (desplegar datos){
+leer memoria SD
+imprimir datos de SD a pantalla
+
+}
+
+EXTRA:
+debo crear una imagen ASCII de no mas de 32 caracteres de ancho 
+usar pagina guía: manytools.org/hacker-tools/convert-images-to-ascii-art/go
+
