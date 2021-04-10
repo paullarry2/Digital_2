@@ -25,6 +25,7 @@
 #include <SD.h>
 
 File root;
+File Myfile
 
 void setup()
 {
@@ -55,7 +56,8 @@ void setup()
 
 void loop()
 {
-  // nothing happens after setup finishes.
+  menu = Serial.read()
+  if 
 }
 
 void printDirectory(File dir, int numTabs) {
@@ -80,4 +82,16 @@ void printDirectory(File dir, int numTabs) {
      }
      entry.close();
    }
+}
+
+void imp_menu(){
+  Serial.println("");
+  Serial.println("Que archivo desea abrir: ");
+  Serial.println("Presione 1 para abrir el primer archivo");
+  Serial.println("Presione 2 para abrir el segundo archivo");
+  Serial.println("Presione 3 para abrir el tercer archivo");
+  Serial.println("Presione 4 para ver los archivos de la SD");
+  Serial.println("");
+  
+}
 }
