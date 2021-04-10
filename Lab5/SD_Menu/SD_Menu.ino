@@ -25,7 +25,8 @@
 #include <SD.h>
 
 File root;
-File Myfile
+File myFile;
+int menu;
 
 void setup()
 {
@@ -52,12 +53,28 @@ void setup()
   printDirectory(root, 0);
 
   Serial.println("done!");
+  imp_menu();
 }
 
 void loop()
 {
-  menu = Serial.read()
-  if 
+  if (Serial.available()==1){
+    menu = Serial.read(); 
+    if(menu == '1'){
+      imp_DK(); 
+    }
+    else if(menu == '2'){
+      imp_SM(); 
+    }
+    else if(menu == '3'){
+      imp_MT(); 
+    }
+    else {
+      Serial.println("Ingeso no Valido, Intente de Nuevo: ");
+    }
+  }
+
+  
 }
 
 void printDirectory(File dir, int numTabs) {
@@ -84,6 +101,64 @@ void printDirectory(File dir, int numTabs) {
    }
 }
 
+void imp_MT(){
+  myFile = SD.open("METROID.TXT");
+  if (myFile) {
+    Serial.println("METROID.TXT:");
+
+    // read from the file until there's nothing else in it:
+    while (myFile.available()) {
+      Serial.write(myFile.read());
+    }
+    // close the file:
+    myFile.close();
+  } else {
+    // if the file didn't open, print an error:
+    Serial.println("error opening METROID.TXT");
+  }
+  imp_menu();
+}
+
+void imp_SM(){
+  myFile = SD.open("SAMUS.TXT");
+  if (myFile) {
+    Serial.println("SAMUS.TXT:");
+
+    // read from the file until there's nothing else in it:
+    while (myFile.available()) {
+      Serial.write(myFile.read());
+    }
+    // close the file:
+    myFile.close();
+  } else {
+    // if the file didn't open, print an error:
+    Serial.println("error opening SAMUS.TXT");
+  }
+  imp_menu();
+}
+
+void imp_DK(){
+  myFile = SD.open("DONKEY~1.TXT");
+  if (myFile) {
+    Serial.println("DONKEY~1.txt:");
+
+    // read from the file until there's nothing else in it:
+    while (myFile.available()) {
+      Serial.write(myFile.read());
+    }
+    // close the file:
+    myFile.close();
+  } else {
+    // if the file didn't open, print an error:
+    Serial.println("error opening DONKEY~1.txt");
+  }
+  imp_menu();
+}
+
+
+//METROID.TXT    396
+//SAMUS.TXT   429
+//DONKEY~1.TXT
 void imp_menu(){
   Serial.println("");
   Serial.println("Que archivo desea abrir: ");
@@ -93,5 +168,4 @@ void imp_menu(){
   Serial.println("Presione 4 para ver los archivos de la SD");
   Serial.println("");
   
-}
 }
