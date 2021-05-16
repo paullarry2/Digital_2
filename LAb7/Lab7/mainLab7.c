@@ -60,10 +60,10 @@ int main(void)
 
     while(1){
         if (state == 1){
-            GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3, 1);
+            GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3, 2);
         }
         else{
-            GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3, 0);
+            GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3, 0x00);
         }
     }
 
@@ -75,7 +75,7 @@ int main(void)
  * *****************************************************************/
 
 void Timer0IntHandler(void){
-    TimerIntClear(TIMER0_BASE, TIMER_TIMA_TIMEOUT); //Borro el timer.
+    TimerIntClear(TIMER0_BASE, TIMER_A); //Borro el timer.
     state = !state;
 
 }
